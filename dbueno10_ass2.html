@@ -10,6 +10,7 @@
   <link href="gwdpage_style.css" rel="stylesheet" data-version="13" data-exports-type="gwd-page">
   <link href="gwdpagedeck_style.css" rel="stylesheet" data-version="14" data-exports-type="gwd-pagedeck">
   <link href="gwdimage_style.css" rel="stylesheet" data-version="15" data-exports-type="gwd-image">
+  <link href="gwdtaparea_style.css" rel="stylesheet" data-version="7" data-exports-type="gwd-taparea">
   <style type="text/css" id="gwd-text-style">
     p {
       margin: 0px;
@@ -193,10 +194,10 @@
       background-image: none;
       background-color: transparent;
       visibility: hidden;
-      top: 0px;
       width: 100%;
       height: 100%;
       left: 0%;
+      top: 0%;
     }
     .gwd-div-1rdp {
       background-color: rgb(115, 62, 31);
@@ -229,10 +230,10 @@
     .gwd-div-a7lg {
       border-color: rgba(0, 0, 0, 0);
       position: absolute;
-      left: 0%;
-      top: 0%;
       width: 200%;
       height: 100%;
+      top: 0%;
+      left: 0%;
     }
     .gwd-image-pzsf {
       display: block;
@@ -287,11 +288,11 @@
     }
     .gwd-image-1gk6 {
       position: absolute;
-      visibility: visible;
       left: 0%;
       top: 0%;
       width: 100.02%;
       height: 100%;
+      visibility: visible;
     }
     .gwd-div-1jn1 {
       background-color: rgb(74, 39, 18);
@@ -879,6 +880,48 @@
       width: 50%;
       height: 100%;
     }
+    .gwd-image-1uik {
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: -3.13%;
+      transform-origin: 78.3333px 81px 0px;
+      left: 0.01%;
+      visibility: hidden;
+    }
+    .gwd-taparea-li44 {
+      display: block;
+      height: 92.8%;
+      left: 0%;
+      overflow: hidden;
+      position: absolute;
+      top: 7.2%;
+      width: 50.82%;
+      transform-origin: 50% 50% 0px;
+    }
+    .gwd-taparea-1ih7 {
+      transform-origin: 50% 50% 0px;
+      left: 50.97%;
+      top: 6.93%;
+      width: 49.03%;
+      overflow: hidden;
+      visibility: hidden;
+      border-image-source: none;
+      border-image-width: 1;
+      border-image-outset: 0;
+      border-image-repeat: stretch;
+      border-color: transparent;
+    }
+    .gwd-taparea-1vva {
+      border-image-source: none;
+      border-image-width: 1;
+      border-image-outset: 0;
+      border-image-repeat: stretch;
+      border-color: transparent;
+      visibility: visible;
+      overflow: visible;
+    }
     @media (width: 667px) and (height: 375px) {
       .gwd-image-1tan {
         left: 0px;
@@ -955,10 +998,22 @@
     gwd.hiddingSaci1 = function(event) {
       document.getElementById("saci_onelegged_walking_1").style.visibility = "hidden";
       document.getElementById("saci_onelegged_walking_2").style.visibility = "visible";
+      document.getElementById("saci-willy-willy").style.visibility = "hidden";
     };
     gwd.hiddingSaci2 = function(event) {
       document.getElementById("saci_onelegged_walking_1").style.visibility = "visible";
       document.getElementById("saci_onelegged_walking_2").style.visibility = "hidden";
+      document.getElementById("saci-willy-willy").style.visibility = "hidden";
+    };
+    gwd.saciWillyWilly1 = function(event) {
+      document.getElementById("saci_onelegged_walking_1").style.visibility = "hidden";
+      document.getElementById("saci_onelegged_walking_2").style.visibility = "hidden";
+      document.getElementById("saci-willy-willy").style.visibility = "visible";
+    };
+    gwd.saciWilliWilli2 = function(event) {
+      document.getElementById("saci_onelegged_walking_1").style.visibility = "visible";
+      document.getElementById("saci_onelegged_walking_2").style.visibility = "hidden";
+      document.getElementById("saci-willy-willy").style.visibility = "hidden";
     };
     gwd.auto_SelectedPlayButtonClick = function(event) {
       // GWD Predefined Function
@@ -979,6 +1034,14 @@
     gwd.auto_Game_main_divEvent_1 = function(event) {
       // GWD Predefined Function
       gwd.actions.timeline.gotoAndPlay('game_main_div', 'platform_start');
+    };
+    gwd.auto_Saci_perere_divEvent_4 = function(event) {
+      // GWD Predefined Function
+      gwd.actions.timeline.gotoAndPlay('saci_perere_div', 'walking_start');
+    };
+    gwd.auto_Gwd_williy_willy_tapAction = function(event) {
+      // GWD Predefined Function
+      gwd.actions.timeline.gotoAndPlay('saci_perere_div', 'willy-willy-start');
     };
   </script>
   <script type="text/javascript" gwd-events="registration">
@@ -1010,6 +1073,10 @@
       gwd.actions.events.addHandler('saci_perere_div', 'event-2', gwd.hiddingSaci2, false);
       gwd.actions.events.addHandler('saci_perere_div', 'event-2', gwd.auto_Saci_perere_divEvent_2, false);
       gwd.actions.events.addHandler('game_main_div', 'event-1', gwd.auto_Game_main_divEvent_1, false);
+      gwd.actions.events.addHandler('saci_perere_div', 'event-3', gwd.saciWillyWilly1, false);
+      gwd.actions.events.addHandler('saci_perere_div', 'event-4', gwd.auto_Saci_perere_divEvent_4, false);
+      gwd.actions.events.addHandler('saci_perere_div', 'event-5', gwd.hiddingSaci2, false);
+      gwd.actions.events.addHandler('gwd-williy-willy-tap', 'action', gwd.auto_Gwd_williy_willy_tapAction, false);
       gwd.actions.timeline.captureAnimationEnd(document.body);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
@@ -1038,12 +1105,17 @@
       gwd.actions.events.removeHandler('saci_perere_div', 'event-2', gwd.hiddingSaci2, false);
       gwd.actions.events.removeHandler('saci_perere_div', 'event-2', gwd.auto_Saci_perere_divEvent_2, false);
       gwd.actions.events.removeHandler('game_main_div', 'event-1', gwd.auto_Game_main_divEvent_1, false);
+      gwd.actions.events.removeHandler('saci_perere_div', 'event-3', gwd.saciWillyWilly1, false);
+      gwd.actions.events.removeHandler('saci_perere_div', 'event-4', gwd.auto_Saci_perere_divEvent_4, false);
+      gwd.actions.events.removeHandler('saci_perere_div', 'event-5', gwd.hiddingSaci2, false);
+      gwd.actions.events.removeHandler('gwd-williy-willy-tap', 'action', gwd.auto_Gwd_williy_willy_tapAction, false);
       gwd.actions.timeline.releaseAnimationEnd(document.body);
     };
     document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
     document.addEventListener("unload", gwd.actions.events.deregisterEventHandlers);
   </script>
   <script data-source="gwdimage_min.js" data-version="15" data-exports-type="gwd-image" src="gwdimage_min.js"></script>
+  <script data-source="gwdtaparea_min.js" data-version="7" data-exports-type="gwd-taparea" src="gwdtaparea_min.js"></script>
 </head>
 
 <body class="document-body">
@@ -1117,13 +1189,19 @@
           <div class="gwd-div-1rdp" id="menu_bar">
             <p class="gwd-p-i5tr" id="game_to_home_button">Back</p>
           </div>
-          <div class="gwd-div-1223" id="saci_perere_div" data-gwd-animation-labels="walking_start,0;hiddingSaci-1,300;hiddingSaci-2,600">
+          <div class="gwd-div-1223" id="saci_perere_div" data-gwd-animation-labels="walking_start,0;hiddingSaci-1,300;hiddingSaci-2,600;willy-willy-start,700">
             <gwd-image id="saci_onelegged_walking_2" source="assets/saci_onelegged_walking_2.png" scaling="stretch" class="gwd-image-1eh6"></gwd-image>
             <gwd-image id="saci_onelegged_walking_1" source="assets/saci_onelegged_walking_1.png" scaling="stretch" class="gwd-image-1gk6"></gwd-image>
+            <gwd-image id="saci-willy-willy" source="assets/Saci-willy-willy.png" scaling="stretch" class="gwd-image-1uik" data-gwd-name="saci-willy-willy"></gwd-image>
             <div class="gwd-animation-event hiddingSaci-1-animation" data-event-name="hiddingSaci-1" data-event-time="300"></div>
             <div class="gwd-animation-event event-2-animation" data-event-name="event-2" data-event-time="600"></div>
+            <div class="gwd-animation-event event-3-animation" data-event-name="event-3" data-event-time="700"></div>
+            <div class="gwd-animation-event event-4-animation" data-event-name="event-4" data-event-time="1500"></div>
+            <div class="gwd-animation-event event-5-animation" data-event-name="event-5" data-event-time="0.1"></div>
           </div>
+          <gwd-taparea id="gwd-williy-willy-tap" class="gwd-taparea-li44 gwd-taparea-1vva" data-gwd-name="gwd-williy-willy-tap"></gwd-taparea>
           <div class="gwd-animation-event event-1-animation" data-event-name="event-1" data-event-time="7700"></div>
+          <gwd-taparea id="gwd-jump-tap" class="gwd-taparea-li44 gwd-taparea-1ih7" data-gwd-name="gwd-jump-tap"></gwd-taparea>
         </div>
       </div>
     </gwd-page>
