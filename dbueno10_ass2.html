@@ -911,17 +911,17 @@
     }
     .gwd-div-jme4 {
       height: 46.4%;
-      left: -8.7%;
       position: absolute;
       top: 48.53%;
       visibility: visible;
-      width: 319.34%;
       transform-origin: 50% 50% 0px;
       border-image-source: none;
       border-image-width: 1;
       border-image-outset: 0;
       border-image-repeat: stretch;
       border-color: transparent;
+      left: -22.19%;
+      width: 332.83%;
     }
     .gwd-div-1wqm {
       position: absolute;
@@ -954,9 +954,9 @@
       height: 100%;
       left: 0%;
       position: absolute;
-      top: 0%;
       visibility: hidden;
       width: 100.03%;
+      top: -3.44%;
     }
     .gwd-div-x2hn {
       visibility: hidden;
@@ -1084,13 +1084,17 @@
         transform: translate3d(0px, 0px, 0px);
         animation-timing-function: linear;
       }
+      49.505% {
+        transform: translate3d(-1319px, 0px, 0px);
+        animation-timing-function: linear;
+      }
       100% {
-        transform: translate3d(-1294px, 0px, 0px);
+        transform: translate3d(-1319px, 0px, 0px);
         animation-timing-function: linear;
       }
     }
     .gwd-play-animation #projecttile_path_div .gwd-gen-197igwdanimation {
-      animation: 5s linear 0s 1 normal forwards running gwd-gen-197igwdanimation_gwd-keyframes;
+      animation: 10.1s linear 0s 1 normal forwards running gwd-gen-197igwdanimation_gwd-keyframes;
     }
     @media (width: 667px) and (height: 375px) {
       .gwd-image-1tan {
@@ -1344,17 +1348,25 @@
       document.getElementById("run_8_farmer").style.visibility = "hidden";
       document.getElementById("run_9_farmer").style.visibility = "visible";
     };
+    gwd.farmerComingRandomly = function(event) {
+      var rand = Math.random() * 2;
+      if (rand > 1) {
+        gwd.actions.timeline.gotoAndPlay("projecttile_path_div", "farmer_start_moving");
+      } else {
+        gwd.actions.timeline.gotoAndPlay("projecttile_path_div", "doingNothing");
+      }
+    };
     gwd.auto_Saci_perere_divEvent_9 = function(event) {
       // GWD Predefined Function
       gwd.actions.timeline.gotoAndPlay('saci_perere_div', 'walking_start');
     };
-    gwd.auto_Projecttile_path_divFarmer_stop_moving = function(event) {
-      // GWD Predefined Function
-      gwd.actions.timeline.gotoAndPlay('projecttile_path_div', 'farmer_start_moving');
-    };
     gwd.auto_Farmer_divEvent_20 = function(event) {
       // GWD Predefined Function
       gwd.actions.timeline.gotoAndPlay('farmer-div', 'farmer_running');
+    };
+    gwd.auto_Projecttile_path_divEvent_22 = function(event) {
+      // GWD Predefined Function
+      gwd.actions.timeline.gotoAndPlay('projecttile_path_div', 'checkFarmerGoes');
     };
   </script>
   <script type="text/javascript" gwd-events="registration">
@@ -1402,9 +1414,11 @@
       gwd.actions.events.addHandler('farmer-div', 'event-17', gwd.EnableRun_7_farmer, false);
       gwd.actions.events.addHandler('farmer-div', 'event-18', gwd.EnableRun_8_farmer, false);
       gwd.actions.events.addHandler('farmer-div', 'event-19', gwd.EnableRun_9_farmer, false);
-      gwd.actions.events.addHandler('projecttile_path_div', 'farmer_stop_moving', gwd.auto_Projecttile_path_divFarmer_stop_moving, false);
       gwd.actions.events.addHandler('farmer-div', 'event-10', gwd.enableRun_0_farmer, false);
       gwd.actions.events.addHandler('farmer-div', 'event-20', gwd.auto_Farmer_divEvent_20, false);
+      gwd.actions.events.addHandler('home_1', 'pagepresenting', gwd.farmerComingRandomly, false);
+      gwd.actions.events.addHandler('projecttile_path_div', 'event-21', gwd.farmerComingRandomly, false);
+      gwd.actions.events.addHandler('projecttile_path_div', 'event-22', gwd.auto_Projecttile_path_divEvent_22, false);
       gwd.actions.timeline.captureAnimationEnd(document.body);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
@@ -1449,9 +1463,11 @@
       gwd.actions.events.removeHandler('farmer-div', 'event-17', gwd.EnableRun_7_farmer, false);
       gwd.actions.events.removeHandler('farmer-div', 'event-18', gwd.EnableRun_8_farmer, false);
       gwd.actions.events.removeHandler('farmer-div', 'event-19', gwd.EnableRun_9_farmer, false);
-      gwd.actions.events.removeHandler('projecttile_path_div', 'farmer_stop_moving', gwd.auto_Projecttile_path_divFarmer_stop_moving, false);
       gwd.actions.events.removeHandler('farmer-div', 'event-10', gwd.enableRun_0_farmer, false);
       gwd.actions.events.removeHandler('farmer-div', 'event-20', gwd.auto_Farmer_divEvent_20, false);
+      gwd.actions.events.removeHandler('home_1', 'pagepresenting', gwd.farmerComingRandomly, false);
+      gwd.actions.events.removeHandler('projecttile_path_div', 'event-21', gwd.farmerComingRandomly, false);
+      gwd.actions.events.removeHandler('projecttile_path_div', 'event-22', gwd.auto_Projecttile_path_divEvent_22, false);
       gwd.actions.timeline.releaseAnimationEnd(document.body);
     };
     document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
@@ -1543,7 +1559,7 @@
             <div class="gwd-animation-event event-8-animation" data-event-name="event-8" data-event-time="1900"></div>
             <div class="gwd-animation-event event-9-animation" data-event-name="event-9" data-event-time="2000"></div>
           </div>
-          <div class="gwd-div-jme4" id="projecttile_path_div" data-gwd-animation-labels="farmer_start_moving,0">
+          <div class="gwd-div-jme4" id="projecttile_path_div" data-gwd-animation-labels="farmer_start_moving,0;checkFarmerGoes,5000;doingNothing,5600">
             <div class="gwd-div-1wqm gwd-gen-197igwdanimation" id="farmer-div" data-gwd-animation-labels="farmer_running,0">
               <gwd-image id="run_9_farmer" source="assets/Run_9_farmer.png" scaling="stretch" class="gwd-image-17kq" data-gwd-name="run_9_farmer"></gwd-image>
               <gwd-image id="run_8_farmer" source="assets/Run_8_farmer.png" scaling="stretch" class="gwd-image-5h6c" data-gwd-name="run_8_farmer"></gwd-image>
@@ -1567,7 +1583,8 @@
               <div class="gwd-animation-event event-19-animation" data-event-name="event-19" data-event-time="1800"></div>
               <div class="gwd-animation-event event-20-animation" data-event-name="event-20" data-event-time="1900"></div>
             </div>
-            <div class="gwd-animation-event farmer_stop_moving-animation" data-event-name="farmer_stop_moving" data-event-time="5000"></div>
+            <div class="gwd-animation-event event-21-animation" data-event-name="event-21" data-event-time="5000"></div>
+            <div class="gwd-animation-event event-22-animation" data-event-name="event-22" data-event-time="10100"></div>
           </div>
           <div class="gwd-animation-event event-1-animation" data-event-name="event-1" data-event-time="7700"></div>
           <gwd-taparea id="gwd-williy-willy-tap" class="gwd-taparea-li44 gwd-taparea-1vva" data-gwd-name="gwd-williy-willy-tap"></gwd-taparea>
