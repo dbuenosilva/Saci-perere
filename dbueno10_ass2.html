@@ -223,9 +223,9 @@
       background-color: rgb(74, 39, 18);
       transform-origin: 50% 50% 0px;
       left: 2.85%;
-      top: 54.4%;
       width: 14.99%;
-      height: 42.67%;
+      top: 63.73%;
+      height: 33.33%;
     }
     .gwd-div-a7lg {
       border-color: rgba(0, 0, 0, 0);
@@ -273,11 +273,12 @@
     }
     .gwd-image-1eh6 {
       position: absolute;
-      visibility: hidden;
       left: 0%;
-      top: -3.13%;
+      top: -3.2%;
       width: 100.02%;
       height: 100%;
+      transform-origin: 50% 50%;
+      visibility: hidden;
     }
     .gwd-image-d17o {
       position: absolute;
@@ -293,6 +294,8 @@
       width: 100.02%;
       height: 100%;
       visibility: visible;
+      transform: translate3d(0px, 0px, 0px);
+      transform-style: preserve-3d;
     }
     .gwd-div-1jn1 {
       background-color: rgb(74, 39, 18);
@@ -885,10 +888,10 @@
       position: absolute;
       height: 100%;
       width: 100%;
-      top: -3.13%;
       transform-origin: 78.3333px 81px 0px;
-      left: 0.01%;
       visibility: hidden;
+      top: -3.13%;
+      left: 0.01%;
     }
     .gwd-taparea-li44 {
       display: block;
@@ -1095,6 +1098,74 @@
     }
     .gwd-play-animation #projecttile_path_div .gwd-gen-197igwdanimation {
       animation: 10.1s linear 0s 1 normal forwards running gwd-gen-197igwdanimation_gwd-keyframes;
+    }
+    @keyframes gwd-gen-1860gwdanimation_gwd-keyframes {
+      0% {
+        transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1);
+        animation-timing-function: linear;
+      }
+      8.8235% {
+        transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1);
+        animation-timing-function: linear;
+      }
+      17.6471% {
+        transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1);
+        animation-timing-function: linear;
+      }
+      20.5882% {
+        transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1);
+        animation-timing-function: linear;
+      }
+      55.8824% {
+        transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1);
+        animation-timing-function: linear;
+      }
+      58.8235% {
+        transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1);
+        animation-timing-function: linear;
+      }
+      70.5882% {
+        transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1);
+        animation-timing-function: linear;
+      }
+      76.4706% {
+        transform: translate3d(0px, 15px, 0px) scale3d(1, 0.767842, 1);
+        animation-timing-function: linear;
+      }
+      82.3529% {
+        transform: translate3d(0px, 29px, 0px) scale3d(1, 0.531254, 1);
+        animation-timing-function: linear;
+      }
+      88.2353% {
+        transform: translate3d(0px, 43px, 0px) scale3d(1, 0.311784, 1);
+        animation-timing-function: linear;
+      }
+      94.1176% {
+        transform: translate3d(0px, 53px, 0px) scale3d(1, 0.159764, 1);
+        animation-timing-function: linear;
+      }
+      100% {
+        transform: translate3d(0px, 62px, 0px) scale3d(1, 0.00800102, 1);
+        animation-timing-function: linear;
+      }
+    }
+    .gwd-play-animation #saci_perere_div .gwd-gen-1860gwdanimation {
+      animation: 3.4s linear 0s 1 normal forwards running gwd-gen-1860gwdanimation_gwd-keyframes;
+    }
+    .gwd-span-1yt0 {
+      position: absolute;
+      width: 333px;
+      height: 66px;
+      left: 181px;
+      top: 29px;
+    }
+    .gwd-span-1kql {
+      position: absolute;
+      left: 120px;
+      top: 59px;
+      transform-origin: 50% 50% 0px;
+      width: 523px;
+      height: 140px;
     }
     @media (width: 667px) and (height: 375px) {
       .gwd-image-1tan {
@@ -1364,9 +1435,37 @@
       // GWD Predefined Function
       gwd.actions.timeline.gotoAndPlay('farmer-div', 'farmer_running');
     };
+    gwd.evaluateCollisionWithFarmar = function(event) {
+      if (!gwd.glovalVars.saciWillyWilly) {
+        gwd.actions.timeline.gotoAndPlay("saci_perere_div", "collision-start");
+      }
+    };
+    gwd.gameOverMessage = function(event) {
+      alert("Game Over");
+    };
     gwd.auto_Projecttile_path_divEvent_22 = function(event) {
       // GWD Predefined Function
       gwd.actions.timeline.gotoAndPlay('projecttile_path_div', 'checkFarmerGoes');
+    };
+    gwd.auto_Saci_perere_divEvent_23 = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_2', 'fade', 1000, 'linear', 'top');
+    };
+    gwd.auto_UnSelectedCreditsButtonClick = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_2', 'fade', 1000, 'linear', 'top');
+    };
+    gwd.auto_SelectedHelpButtonClick = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_3', 'fade', 1000, 'linear', 'top');
+    };
+    gwd.auto_UnSelectedHelpButtonClick = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_3', 'fade', 1000, 'linear', 'top');
+    };
+    gwd.auto_UnSelectedCreditsButtonClick1 = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_2', 'fade', 1000, 'linear', 'top');
     };
   </script>
   <script type="text/javascript" gwd-events="registration">
@@ -1419,6 +1518,13 @@
       gwd.actions.events.addHandler('home_1', 'pagepresenting', gwd.farmerComingRandomly, false);
       gwd.actions.events.addHandler('projecttile_path_div', 'event-21', gwd.farmerComingRandomly, false);
       gwd.actions.events.addHandler('projecttile_path_div', 'event-22', gwd.auto_Projecttile_path_divEvent_22, false);
+      gwd.actions.events.addHandler('saci_perere_div', 'event-23', gwd.auto_Saci_perere_divEvent_23, false);
+      gwd.actions.events.addHandler('projecttile_path_div', 'CollisionWithFarmer', gwd.evaluateCollisionWithFarmar, false);
+      gwd.actions.events.addHandler('saci_perere_div', 'event-23', gwd.gameOverMessage, false);
+      gwd.actions.events.addHandler('UnSelectedCreditsButton', 'click', gwd.auto_UnSelectedCreditsButtonClick, false);
+      gwd.actions.events.addHandler('SelectedHelpButton', 'click', gwd.auto_SelectedHelpButtonClick, false);
+      gwd.actions.events.addHandler('UnSelectedHelpButton', 'click', gwd.auto_UnSelectedHelpButtonClick, false);
+      gwd.actions.events.addHandler('UnSelectedCreditsButton', 'click', gwd.auto_UnSelectedCreditsButtonClick1, false);
       gwd.actions.timeline.captureAnimationEnd(document.body);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
@@ -1468,6 +1574,13 @@
       gwd.actions.events.removeHandler('home_1', 'pagepresenting', gwd.farmerComingRandomly, false);
       gwd.actions.events.removeHandler('projecttile_path_div', 'event-21', gwd.farmerComingRandomly, false);
       gwd.actions.events.removeHandler('projecttile_path_div', 'event-22', gwd.auto_Projecttile_path_divEvent_22, false);
+      gwd.actions.events.removeHandler('saci_perere_div', 'event-23', gwd.auto_Saci_perere_divEvent_23, false);
+      gwd.actions.events.removeHandler('projecttile_path_div', 'CollisionWithFarmer', gwd.evaluateCollisionWithFarmar, false);
+      gwd.actions.events.removeHandler('saci_perere_div', 'event-23', gwd.gameOverMessage, false);
+      gwd.actions.events.removeHandler('UnSelectedCreditsButton', 'click', gwd.auto_UnSelectedCreditsButtonClick, false);
+      gwd.actions.events.removeHandler('SelectedHelpButton', 'click', gwd.auto_SelectedHelpButtonClick, false);
+      gwd.actions.events.removeHandler('UnSelectedHelpButton', 'click', gwd.auto_UnSelectedHelpButtonClick, false);
+      gwd.actions.events.removeHandler('UnSelectedCreditsButton', 'click', gwd.auto_UnSelectedCreditsButtonClick1, false);
       gwd.actions.timeline.releaseAnimationEnd(document.body);
     };
     document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
@@ -1494,6 +1607,20 @@
           <gwd-image id="SelectedCreditsButton" source="assets/SelectedCreditsButton.png" scaling="stretch" class="gwd-image-debh"></gwd-image>
         </div>
       </div>
+    </gwd-page>
+    <gwd-page id="home_2" class="gwd-page-wrapper home-content gwd-lightbox gwd-page-1tis" data-gwd-width="100%" data-gwd-height="100%" data-gwd-name="Credits">
+      <div class="gwd-page-content home-content gwd-div-1hld">
+        <div class="gwd-div-1kid" id="credits_main_div">
+          <gwd-image id="credits_background" source="assets/BG-1920-1440.png" scaling="stretch" class="gwd-image-111r" data-gwd-name="credits_background"></gwd-image>
+        </div>
+        <span class="gwd-span-1yt0 text-tool-feedback">Credits Page</span></div>
+    </gwd-page>
+    <gwd-page id="home_3" class="gwd-page-wrapper home-content gwd-lightbox gwd-page-1tis" data-gwd-width="100%" data-gwd-height="100%" data-gwd-name="Help">
+      <div class="gwd-page-content home-content gwd-div-1hld">
+        <div class="gwd-div-1kid" id="help_main_div">
+          <gwd-image id="help_background" source="assets/BG-1920-1440.png" scaling="stretch" class="gwd-image-111r" data-gwd-name="help_background"></gwd-image>
+        </div>
+        <span class="gwd-span-1kql text-tool-feedback">Help page:<br><br>Click/Touch somewhere on screen to run the command "Saci-perere willy-willy"<br><br><br>Run on iPhone 6/7/8 landscape screen.</span></div>
     </gwd-page>
     <gwd-page id="home_1" class="gwd-page-wrapper gwd-lightbox gwd-page-1g8m" data-gwd-width="100%" data-gwd-height="100%" data-gwd-name="Game">
       <div class="gwd-page-content gwd-div-a8bz">
@@ -1548,9 +1675,9 @@
           <div class="gwd-div-1rdp" id="menu_bar">
             <p class="gwd-p-i5tr" id="game_to_home_button">Back</p>
           </div>
-          <div class="gwd-div-1223" id="saci_perere_div" data-gwd-animation-labels="walking_start,0;hiddingSaci-1,300;hiddingSaci-2,600;willy-willy-start,700">
+          <div class="gwd-div-1223" id="saci_perere_div" data-gwd-animation-labels="walking_start,0;hiddingSaci-1,300;hiddingSaci-2,600;willy-willy-start,700;collision-start,2400;collision-end,3400">
             <gwd-image id="saci_onelegged_walking_2" source="assets/saci_onelegged_walking_2.png" scaling="stretch" class="gwd-image-1eh6" data-gwd-name="saci_onelegged_walking_2"></gwd-image>
-            <gwd-image id="saci_onelegged_walking_1" source="assets/saci_onelegged_walking_1.png" scaling="stretch" class="gwd-image-1gk6" data-gwd-name="saci_onelegged_walking_1"></gwd-image>
+            <gwd-image id="saci_onelegged_walking_1" source="assets/saci_onelegged_walking_1.png" scaling="stretch" class="gwd-image-1gk6 gwd-gen-1860gwdanimation" data-gwd-name="saci_onelegged_walking_1"></gwd-image>
             <gwd-image id="saci-willy-willy" source="assets/Saci-willy-willy.png" scaling="stretch" class="gwd-image-1uik" data-gwd-name="saci-willy-willy"></gwd-image>
             <div class="gwd-animation-event hiddingSaci-1-animation" data-event-name="hiddingSaci-1" data-event-time="300"></div>
             <div class="gwd-animation-event event-2-animation" data-event-name="event-2" data-event-time="600"></div>
@@ -1558,6 +1685,7 @@
             <div class="gwd-animation-event event-5-animation" data-event-name="event-5" data-event-time="0.1"></div>
             <div class="gwd-animation-event event-8-animation" data-event-name="event-8" data-event-time="1900"></div>
             <div class="gwd-animation-event event-9-animation" data-event-name="event-9" data-event-time="2000"></div>
+            <div class="gwd-animation-event event-23-animation" data-event-name="event-23" data-event-time="3400"></div>
           </div>
           <div class="gwd-div-jme4" id="projecttile_path_div" data-gwd-animation-labels="farmer_start_moving,0;checkFarmerGoes,5000;doingNothing,5600">
             <div class="gwd-div-1wqm gwd-gen-197igwdanimation" id="farmer-div" data-gwd-animation-labels="farmer_running,0">
@@ -1585,6 +1713,7 @@
             </div>
             <div class="gwd-animation-event event-21-animation" data-event-name="event-21" data-event-time="5000"></div>
             <div class="gwd-animation-event event-22-animation" data-event-name="event-22" data-event-time="10100"></div>
+            <div class="gwd-animation-event CollisionWithFarmer-animation" data-event-name="CollisionWithFarmer" data-event-time="4000"></div>
           </div>
           <div class="gwd-animation-event event-1-animation" data-event-name="event-1" data-event-time="7700"></div>
           <gwd-taparea id="gwd-williy-willy-tap" class="gwd-taparea-li44 gwd-taparea-1vva" data-gwd-name="gwd-williy-willy-tap"></gwd-taparea>
