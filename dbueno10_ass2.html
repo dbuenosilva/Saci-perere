@@ -892,26 +892,13 @@
     }
     .gwd-taparea-li44 {
       display: block;
-      height: 92.8%;
       left: 0%;
       overflow: hidden;
       position: absolute;
       top: 7.2%;
-      width: 50.82%;
       transform-origin: 50% 50% 0px;
-    }
-    .gwd-taparea-1ih7 {
-      transform-origin: 50% 50% 0px;
-      left: 50.97%;
-      top: 6.93%;
-      width: 49.03%;
-      overflow: hidden;
-      visibility: hidden;
-      border-image-source: none;
-      border-image-width: 1;
-      border-image-outset: 0;
-      border-image-repeat: stretch;
-      border-color: transparent;
+      width: 99.85%;
+      height: 100%;
     }
     .gwd-taparea-1vva {
       border-image-source: none;
@@ -1006,9 +993,9 @@
       document.getElementById("saci-willy-willy").style.visibility = "hidden";
     };
     gwd.saciWillyWilly1 = function(event) {
+      document.getElementById("saci-willy-willy").style.visibility = "visible";
       document.getElementById("saci_onelegged_walking_1").style.visibility = "hidden";
       document.getElementById("saci_onelegged_walking_2").style.visibility = "hidden";
-      document.getElementById("saci-willy-willy").style.visibility = "visible";
     };
     gwd.saciWilliWilli2 = function(event) {
       document.getElementById("saci_onelegged_walking_1").style.visibility = "visible";
@@ -1035,13 +1022,28 @@
       // GWD Predefined Function
       gwd.actions.timeline.gotoAndPlay('game_main_div', 'platform_start');
     };
-    gwd.auto_Saci_perere_divEvent_4 = function(event) {
-      // GWD Predefined Function
-      gwd.actions.timeline.gotoAndPlay('saci_perere_div', 'walking_start');
-    };
     gwd.auto_Gwd_williy_willy_tapAction = function(event) {
       // GWD Predefined Function
       gwd.actions.timeline.gotoAndPlay('saci_perere_div', 'willy-willy-start');
+    };
+    gwd.init = function(event) {
+      gwd.glovalVars = gwd.globalVars || {};
+      gwd.glovalVars.saciWillyWilly = false;
+    };
+    gwd.saciWillyWillyRunning = function(event) {
+      if (!gwd.glovalVars.saciWillyWilly) {
+        gwd.actions.timeline.gotoAndPlay('saci_perere_div', 'willy-willy-start');
+        gwd.glovalVars.saciWillyWilly = true;
+      }
+    };
+    gwd.saciWillyWillyStopRunning = function(event) {
+      if (gwd.glovalVars.saciWillyWilly) {
+        gwd.glovalVars.saciWillyWilly = false;
+      }
+    };
+    gwd.auto_Saci_perere_divEvent_9 = function(event) {
+      // GWD Predefined Function
+      gwd.actions.timeline.gotoAndPlay('saci_perere_div', 'walking_start');
     };
   </script>
   <script type="text/javascript" gwd-events="registration">
@@ -1074,9 +1076,12 @@
       gwd.actions.events.addHandler('saci_perere_div', 'event-2', gwd.auto_Saci_perere_divEvent_2, false);
       gwd.actions.events.addHandler('game_main_div', 'event-1', gwd.auto_Game_main_divEvent_1, false);
       gwd.actions.events.addHandler('saci_perere_div', 'event-3', gwd.saciWillyWilly1, false);
-      gwd.actions.events.addHandler('saci_perere_div', 'event-4', gwd.auto_Saci_perere_divEvent_4, false);
       gwd.actions.events.addHandler('saci_perere_div', 'event-5', gwd.hiddingSaci2, false);
       gwd.actions.events.addHandler('gwd-williy-willy-tap', 'action', gwd.auto_Gwd_williy_willy_tapAction, false);
+      gwd.actions.events.addHandler('home_1', 'pagepresenting', gwd.init, false);
+      gwd.actions.events.addHandler('game_main_div', 'action', gwd.saciWillyWillyRunning, false);
+      gwd.actions.events.addHandler('saci_perere_div', 'event-8', gwd.saciWillyWillyStopRunning, false);
+      gwd.actions.events.addHandler('saci_perere_div', 'event-9', gwd.auto_Saci_perere_divEvent_9, false);
       gwd.actions.timeline.captureAnimationEnd(document.body);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
@@ -1106,9 +1111,12 @@
       gwd.actions.events.removeHandler('saci_perere_div', 'event-2', gwd.auto_Saci_perere_divEvent_2, false);
       gwd.actions.events.removeHandler('game_main_div', 'event-1', gwd.auto_Game_main_divEvent_1, false);
       gwd.actions.events.removeHandler('saci_perere_div', 'event-3', gwd.saciWillyWilly1, false);
-      gwd.actions.events.removeHandler('saci_perere_div', 'event-4', gwd.auto_Saci_perere_divEvent_4, false);
       gwd.actions.events.removeHandler('saci_perere_div', 'event-5', gwd.hiddingSaci2, false);
       gwd.actions.events.removeHandler('gwd-williy-willy-tap', 'action', gwd.auto_Gwd_williy_willy_tapAction, false);
+      gwd.actions.events.removeHandler('home_1', 'pagepresenting', gwd.init, false);
+      gwd.actions.events.removeHandler('game_main_div', 'action', gwd.saciWillyWillyRunning, false);
+      gwd.actions.events.removeHandler('saci_perere_div', 'event-8', gwd.saciWillyWillyStopRunning, false);
+      gwd.actions.events.removeHandler('saci_perere_div', 'event-9', gwd.auto_Saci_perere_divEvent_9, false);
       gwd.actions.timeline.releaseAnimationEnd(document.body);
     };
     document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
@@ -1190,18 +1198,18 @@
             <p class="gwd-p-i5tr" id="game_to_home_button">Back</p>
           </div>
           <div class="gwd-div-1223" id="saci_perere_div" data-gwd-animation-labels="walking_start,0;hiddingSaci-1,300;hiddingSaci-2,600;willy-willy-start,700">
-            <gwd-image id="saci_onelegged_walking_2" source="assets/saci_onelegged_walking_2.png" scaling="stretch" class="gwd-image-1eh6"></gwd-image>
-            <gwd-image id="saci_onelegged_walking_1" source="assets/saci_onelegged_walking_1.png" scaling="stretch" class="gwd-image-1gk6"></gwd-image>
+            <gwd-image id="saci_onelegged_walking_2" source="assets/saci_onelegged_walking_2.png" scaling="stretch" class="gwd-image-1eh6" data-gwd-name="saci_onelegged_walking_2"></gwd-image>
+            <gwd-image id="saci_onelegged_walking_1" source="assets/saci_onelegged_walking_1.png" scaling="stretch" class="gwd-image-1gk6" data-gwd-name="saci_onelegged_walking_1"></gwd-image>
             <gwd-image id="saci-willy-willy" source="assets/Saci-willy-willy.png" scaling="stretch" class="gwd-image-1uik" data-gwd-name="saci-willy-willy"></gwd-image>
             <div class="gwd-animation-event hiddingSaci-1-animation" data-event-name="hiddingSaci-1" data-event-time="300"></div>
             <div class="gwd-animation-event event-2-animation" data-event-name="event-2" data-event-time="600"></div>
             <div class="gwd-animation-event event-3-animation" data-event-name="event-3" data-event-time="700"></div>
-            <div class="gwd-animation-event event-4-animation" data-event-name="event-4" data-event-time="1500"></div>
             <div class="gwd-animation-event event-5-animation" data-event-name="event-5" data-event-time="0.1"></div>
+            <div class="gwd-animation-event event-8-animation" data-event-name="event-8" data-event-time="1900"></div>
+            <div class="gwd-animation-event event-9-animation" data-event-name="event-9" data-event-time="2000"></div>
           </div>
           <gwd-taparea id="gwd-williy-willy-tap" class="gwd-taparea-li44 gwd-taparea-1vva" data-gwd-name="gwd-williy-willy-tap"></gwd-taparea>
           <div class="gwd-animation-event event-1-animation" data-event-name="event-1" data-event-time="7700"></div>
-          <gwd-taparea id="gwd-jump-tap" class="gwd-taparea-li44 gwd-taparea-1ih7" data-gwd-name="gwd-jump-tap"></gwd-taparea>
         </div>
       </div>
     </gwd-page>
