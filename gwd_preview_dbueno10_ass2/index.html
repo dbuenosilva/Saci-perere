@@ -138,31 +138,11 @@ body {
     width: 9%;
     height: 16%;
 }
-.gwd-image-rk7d {
-    display: block;
-    position: absolute;
-    visibility: hidden;
-    left: 32.98%;
-    top: 8%;
-    width: 9%;
-    height: 16%;
-}
 .gwd-div-8fdg {
     visibility: hidden;
 }
 .gwd-img-12lz {
     visibility: hidden;
-}
-.gwd-image-rap7 {
-    display: block;
-    position: absolute;
-    transform-origin: 50% 50% 0px;
-    -webkit-transform-origin: 50% 50% 0px;
-    -moz-transform-origin: 50% 50% 0px;
-    left: 32.98%;
-    top: 8%;
-    width: 9%;
-    height: 16%;
 }
 .gwd-image-5bk0 {
     display: block;
@@ -1512,15 +1492,48 @@ body {
     left: 181px;
     top: 29px;
 }
-.gwd-span-1kql {
+.gwd-div-177a {
+    visibility: hidden;
+}
+.gwd-img-1bvc {
+    visibility: hidden;
+}
+.gwd-image-rap7 {
+    display: block;
     position: absolute;
-    left: 120px;
-    top: 59px;
     transform-origin: 50% 50% 0px;
     -webkit-transform-origin: 50% 50% 0px;
     -moz-transform-origin: 50% 50% 0px;
-    width: 523px;
+    left: 33%;
+    top: 8%;
+    width: 9%;
+    height: 16%;
+}
+.gwd-image-rk7d {
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    left: 33%;
+    top: 8%;
+    width: 9%;
+    height: 16%;
+}
+.gwd-div-hov7 {
+    visibility: hidden;
+}
+.gwd-img-gcjt {
+    visibility: hidden;
+}
+.gwd-span-1kql {
+    display: block;
     height: 140px;
+    left: 120px;
+    position: absolute;
+    top: 59px;
+    width: 523px;
+    transform-origin: 50% 50% 0px;
+    -webkit-transform-origin: 50% 50% 0px;
+    -moz-transform-origin: 50% 50% 0px;
 }
 @media (height: 375px) and (width: 667px) {
     .gwd-image-1tan {
@@ -4006,23 +4019,23 @@ body {
     };
     gwd.auto_Saci_perere_divEvent_23 = function(event) {
       // GWD Predefined Function
-      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_2', 'fade', 1000, 'linear', 'top');
-    };
-    gwd.auto_UnSelectedCreditsButtonClick = function(event) {
-      // GWD Predefined Function
-      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_2', 'fade', 1000, 'linear', 'top');
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'Credits', 'fade', 1000, 'linear', 'top');
     };
     gwd.auto_SelectedHelpButtonClick = function(event) {
       // GWD Predefined Function
-      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_3', 'fade', 1000, 'linear', 'top');
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'Help', 'fade', 1000, 'linear', 'top');
     };
-    gwd.auto_UnSelectedHelpButtonClick = function(event) {
+    gwd.auto_SelectedCreditsButtonClick = function(event) {
       // GWD Predefined Function
-      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_3', 'fade', 1000, 'linear', 'top');
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'Credits', 'fade', 1000, 'linear', 'top');
     };
-    gwd.auto_UnSelectedCreditsButtonClick1 = function(event) {
+    gwd.auto_Game_to_home_button_1Click = function(event) {
       // GWD Predefined Function
-      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_2', 'fade', 1000, 'linear', 'top');
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home', 'fade', 750, 'linear', 'left');
+    };
+    gwd.auto_Help_to_home_buttonClick = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home', 'fade', 750, 'linear', 'left');
     };
   </script>
   <script type="text/javascript" gwd-events="registration">
@@ -4039,10 +4052,6 @@ body {
       gwd.actions.events.addHandler('UnSelectedExitButton', 'click', gwd.closeWindow, false);
       gwd.actions.events.addHandler('UnSelectedCreditsButton', 'mouseover', gwd.onMouseOverCreditsButton, false);
       gwd.actions.events.addHandler('UnSelectedCreditsButton', 'mouseout', gwd.onMouseOutCreditsButton, false);
-      gwd.actions.events.addHandler('SelectedHelpButton', 'mouseover', gwd.onMouseOverHelpButton, false);
-      gwd.actions.events.addHandler('SelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
-      gwd.actions.events.addHandler('UnSelectedHelpButton', 'mouseover', gwd.onMouseOverHelpButton, false);
-      gwd.actions.events.addHandler('UnSelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
       gwd.actions.events.addHandler('SelectedPlayButton', 'mouseout', gwd.onMouseOutPlay, false);
       gwd.actions.events.addHandler('SelectedPlayButton', 'mouseover', gwd.onMouseOverPlay, false);
       gwd.actions.events.addHandler('SelectedPlayButton', 'click', gwd.auto_SelectedPlayButtonClick, false);
@@ -4078,10 +4087,14 @@ body {
       gwd.actions.events.addHandler('saci_perere_div', 'event-23', gwd.auto_Saci_perere_divEvent_23, false);
       gwd.actions.events.addHandler('projecttile_path_div', 'CollisionWithFarmer', gwd.evaluateCollisionWithFarmar, false);
       gwd.actions.events.addHandler('saci_perere_div', 'event-23', gwd.gameOverMessage, false);
-      gwd.actions.events.addHandler('UnSelectedCreditsButton', 'click', gwd.auto_UnSelectedCreditsButtonClick, false);
+      gwd.actions.events.addHandler('UnSelectedHelpButton', 'mouseover', gwd.onMouseOverHelpButton, false);
+      gwd.actions.events.addHandler('UnSelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
+      gwd.actions.events.addHandler('SelectedHelpButton', 'mouseover', gwd.onMouseOverHelpButton, false);
+      gwd.actions.events.addHandler('SelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
       gwd.actions.events.addHandler('SelectedHelpButton', 'click', gwd.auto_SelectedHelpButtonClick, false);
-      gwd.actions.events.addHandler('UnSelectedHelpButton', 'click', gwd.auto_UnSelectedHelpButtonClick, false);
-      gwd.actions.events.addHandler('UnSelectedCreditsButton', 'click', gwd.auto_UnSelectedCreditsButtonClick1, false);
+      gwd.actions.events.addHandler('SelectedCreditsButton', 'click', gwd.auto_SelectedCreditsButtonClick, false);
+      gwd.actions.events.addHandler('credits_to_home_button', 'click', gwd.auto_Game_to_home_button_1Click, false);
+      gwd.actions.events.addHandler('help_to_home_button', 'click', gwd.auto_Help_to_home_buttonClick, false);
       gwd.actions.timeline.captureAnimationEnd(document.body);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
@@ -4095,10 +4108,6 @@ body {
       gwd.actions.events.removeHandler('UnSelectedExitButton', 'click', gwd.closeWindow, false);
       gwd.actions.events.removeHandler('UnSelectedCreditsButton', 'mouseover', gwd.onMouseOverCreditsButton, false);
       gwd.actions.events.removeHandler('UnSelectedCreditsButton', 'mouseout', gwd.onMouseOutCreditsButton, false);
-      gwd.actions.events.removeHandler('SelectedHelpButton', 'mouseover', gwd.onMouseOverHelpButton, false);
-      gwd.actions.events.removeHandler('SelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
-      gwd.actions.events.removeHandler('UnSelectedHelpButton', 'mouseover', gwd.onMouseOverHelpButton, false);
-      gwd.actions.events.removeHandler('UnSelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
       gwd.actions.events.removeHandler('SelectedPlayButton', 'mouseout', gwd.onMouseOutPlay, false);
       gwd.actions.events.removeHandler('SelectedPlayButton', 'mouseover', gwd.onMouseOverPlay, false);
       gwd.actions.events.removeHandler('SelectedPlayButton', 'click', gwd.auto_SelectedPlayButtonClick, false);
@@ -4134,10 +4143,14 @@ body {
       gwd.actions.events.removeHandler('saci_perere_div', 'event-23', gwd.auto_Saci_perere_divEvent_23, false);
       gwd.actions.events.removeHandler('projecttile_path_div', 'CollisionWithFarmer', gwd.evaluateCollisionWithFarmar, false);
       gwd.actions.events.removeHandler('saci_perere_div', 'event-23', gwd.gameOverMessage, false);
-      gwd.actions.events.removeHandler('UnSelectedCreditsButton', 'click', gwd.auto_UnSelectedCreditsButtonClick, false);
+      gwd.actions.events.removeHandler('UnSelectedHelpButton', 'mouseover', gwd.onMouseOverHelpButton, false);
+      gwd.actions.events.removeHandler('UnSelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
+      gwd.actions.events.removeHandler('SelectedHelpButton', 'mouseover', gwd.onMouseOverHelpButton, false);
+      gwd.actions.events.removeHandler('SelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
       gwd.actions.events.removeHandler('SelectedHelpButton', 'click', gwd.auto_SelectedHelpButtonClick, false);
-      gwd.actions.events.removeHandler('UnSelectedHelpButton', 'click', gwd.auto_UnSelectedHelpButtonClick, false);
-      gwd.actions.events.removeHandler('UnSelectedCreditsButton', 'click', gwd.auto_UnSelectedCreditsButtonClick1, false);
+      gwd.actions.events.removeHandler('SelectedCreditsButton', 'click', gwd.auto_SelectedCreditsButtonClick, false);
+      gwd.actions.events.removeHandler('credits_to_home_button', 'click', gwd.auto_Game_to_home_button_1Click, false);
+      gwd.actions.events.removeHandler('help_to_home_button', 'click', gwd.auto_Help_to_home_buttonClick, false);
       gwd.actions.timeline.releaseAnimationEnd(document.body);
     };
     document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
@@ -4153,89 +4166,96 @@ body {
     <gwd-page id="home" class="gwd-page-wrapper home-content gwd-lightbox gwd-page-1tis" data-gwd-width="100%" data-gwd-height="100%" data-gwd-name="Home">
       <div class="gwd-page-content home-content gwd-div-1hld">
         <div class="gwd-div-1kid" id="home_main_div">
-          <gwd-image id="home_background" source="BG-1920-1440.png?1600605514357" scaling="stretch" class="gwd-image-111r" data-gwd-name="home_background"></gwd-image>
-          <gwd-image id="UnSelectedPlayButton" source="UnSelectedPlayButton.png?1600605514357" scaling="stretch" class="gwd-image-ghs9" data-gwd-name="UnSelectedPlayButton" alt="Play"></gwd-image>
-          <gwd-image id="SelectedPlayButton" source="SelectedPlayButton.png?1600605514357" scaling="stretch" class="gwd-image-5bk0" alt="Play now!" data-gwd-name="SelectedPlayButton"></gwd-image>
-          <gwd-image id="UnSelectedHelpButton" source="UnSelectedHelpButton.png?1600605514357" scaling="stretch" class="gwd-image-rap7"></gwd-image>
-          <gwd-image id="SelectedHelpButton" source="SelectedHelpButton.png?1600605514357" scaling="stretch" class="gwd-image-rk7d"></gwd-image>
-          <gwd-image id="UnSelectedCreditsButton" source="UnSelectedCreditsButton.png?1600605514357" scaling="stretch" class="gwd-image-47u4"></gwd-image>
-          <gwd-image id="UnSelectedExitButton" source="UnSelectedExitButton.png?1600605514357" scaling="stretch" class="gwd-image-hqhd"></gwd-image>
-          <gwd-image id="SelectedExitButton" source="SelectedExitButton.png?1600605514357" scaling="stretch" class="gwd-image-c88z"></gwd-image>
-          <gwd-image id="SelectedCreditsButton" source="SelectedCreditsButton.png?1600605514357" scaling="stretch" class="gwd-image-debh"></gwd-image>
+          <gwd-image id="home_background" source="BG-1920-1440.png?1600748147317" scaling="stretch" class="gwd-image-111r" data-gwd-name="home_background"></gwd-image>
+          <gwd-image id="UnSelectedPlayButton" source="UnSelectedPlayButton.png?1600748147317" scaling="stretch" class="gwd-image-ghs9" data-gwd-name="UnSelectedPlayButton" alt="Play"></gwd-image>
+          <gwd-image id="SelectedPlayButton" source="SelectedPlayButton.png?1600748147317" scaling="stretch" class="gwd-image-5bk0" alt="Play now!" data-gwd-name="SelectedPlayButton"></gwd-image>
+          <gwd-image id="UnSelectedCreditsButton" source="UnSelectedCreditsButton.png?1600748147317" scaling="stretch" class="gwd-image-47u4"></gwd-image>
+          <gwd-image id="UnSelectedExitButton" source="UnSelectedExitButton.png?1600748147317" scaling="stretch" class="gwd-image-hqhd"></gwd-image>
+          <gwd-image id="SelectedExitButton" source="SelectedExitButton.png?1600748147317" scaling="stretch" class="gwd-image-c88z"></gwd-image>
+          <gwd-image id="SelectedCreditsButton" source="SelectedCreditsButton.png?1600748147317" scaling="stretch" class="gwd-image-debh"></gwd-image>
+          <gwd-image id="UnSelectedHelpButton" source="UnSelectedHelpButton.png?1600748147317" scaling="stretch" class="gwd-image-rap7"></gwd-image>
+          <gwd-image id="SelectedHelpButton" source="SelectedHelpButton.png?1600748147317" scaling="stretch" class="gwd-image-rk7d"></gwd-image>
         </div>
       </div>
     </gwd-page>
-    <gwd-page id="home_2" class="gwd-page-wrapper home-content gwd-lightbox gwd-page-1tis" data-gwd-width="100%" data-gwd-height="100%" data-gwd-name="Credits">
+    <gwd-page id="Credits" class="gwd-page-wrapper home-content gwd-lightbox gwd-page-1tis" data-gwd-width="100%" data-gwd-height="100%" data-gwd-name="Credits">
       <div class="gwd-page-content home-content gwd-div-1hld">
         <div class="gwd-div-1kid" id="credits_main_div">
-          <gwd-image id="credits_background" source="BG-1920-1440.png?1600605514357" scaling="stretch" class="gwd-image-111r" data-gwd-name="credits_background"></gwd-image>
+          <gwd-image id="credits_background" source="BG-1920-1440.png?1600748147317" scaling="stretch" class="gwd-image-111r" data-gwd-name="credits_background"></gwd-image>
+          <div class="gwd-div-1rdp" id="menu_bar_credits">
+            <p class="gwd-p-i5tr" id="credits_to_home_button">Back</p>
+          </div>
         </div>
         <span class="gwd-span-1yt0 text-tool-feedback">Credits Page</span></div>
     </gwd-page>
-    <gwd-page id="home_3" class="gwd-page-wrapper home-content gwd-lightbox gwd-page-1tis" data-gwd-width="100%" data-gwd-height="100%" data-gwd-name="Help">
+    <gwd-page id="Help" class="gwd-page-wrapper home-content gwd-lightbox gwd-page-1tis" data-gwd-width="100%" data-gwd-height="100%" data-gwd-name="Help">
       <div class="gwd-page-content home-content gwd-div-1hld">
         <div class="gwd-div-1kid" id="help_main_div">
-          <gwd-image id="help_background" source="BG-1920-1440.png?1600605514357" scaling="stretch" class="gwd-image-111r" data-gwd-name="help_background"></gwd-image>
+          <gwd-image id="help_background" source="BG-1920-1440.png?1600748147317" scaling="stretch" class="gwd-image-111r" data-gwd-name="help_background"></gwd-image>
+          <span class="gwd-span-1kql">Help page:<br><br>Click/Touch somewhere on screen to run the command "Saci-perere willy-willy"<br><br><br>Run on iPhone 6/7/8 landscape screen.</span>
+          <div class="gwd-div-1rdp" id="menu_bar_help">
+            <p class="gwd-p-i5tr" id="help_to_home_button">Back</p>
+          </div>
         </div>
-        <span class="gwd-span-1kql text-tool-feedback">Help page:<br><br>Click/Touch somewhere on screen to run the command "Saci-perere willy-willy"<br><br><br>Run on iPhone 6/7/8 landscape screen.</span></div>
+      </div>
     </gwd-page>
     <gwd-page id="home_1" class="gwd-page-wrapper gwd-lightbox gwd-page-1g8m" data-gwd-width="100%" data-gwd-height="100%" data-gwd-name="Game">
       <div class="gwd-page-content gwd-div-a8bz">
         <div class="gwd-div-8wll" id="game_main_div">
           <div class="gwd-div-a7lg gwd-gen-1gc2gwdanimation" id="background_div">
-            <gwd-image id="game_background_2" source="BG-1920-1440.png?1600605514357" scaling="stretch" class="gwd-image-pzsf gwd-image-e3ch gwd-image-oj5m" data-gwd-name="game_background_2"></gwd-image>
-            <gwd-image id="game_background_1" source="BG-1920-1440.png?1600605514357" scaling="stretch" class="gwd-image-pzsf gwd-image-vk6a" data-gwd-name="game_background_1"></gwd-image>
+            <gwd-image id="game_background_2" source="BG-1920-1440.png?1600748147317" scaling="stretch" class="gwd-image-pzsf gwd-image-e3ch gwd-image-oj5m" data-gwd-name="game_background_2"></gwd-image>
+            <gwd-image id="game_background_1" source="BG-1920-1440.png?1600748147317" scaling="stretch" class="gwd-image-pzsf gwd-image-vk6a" data-gwd-name="game_background_1"></gwd-image>
           </div>
           <div class="gwd-div-1jn1 gwd-gen-4qksgwdanimation" id="platform_div">
-            <gwd-image id="game_tile_0" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-1w3a" data-gwd-name="game_tile_0"></gwd-image>
-            <gwd-image id="game_tile_1" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-1qdl" data-gwd-name="game_tile_1"></gwd-image>
-            <gwd-image id="game_tile_2" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-1tje" data-gwd-name="game_tile_2"></gwd-image>
-            <gwd-image id="game_tile_3" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-1n3r" data-gwd-name="game_tile_3"></gwd-image>
-            <gwd-image id="game_tile_4" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-1vld gwd-image-1aez" data-gwd-name="game_tile_4"></gwd-image>
-            <gwd-image id="game_tile_5" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-yy2v" data-gwd-name="game_tile_5"></gwd-image>
-            <gwd-image id="game_tile_6" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-ejlz" data-gwd-name="game_tile_6"></gwd-image>
-            <gwd-image id="game_tile_7" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-12vn" data-gwd-name="game_tile_7"></gwd-image>
-            <gwd-image id="game_tile_8" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-bd2r gwd-image-tu3k" data-gwd-name="game_tile_8"></gwd-image>
-            <gwd-image id="game_tile_9" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-1mts" data-gwd-name="game_tile_9"></gwd-image>
-            <gwd-image id="game_tile_10" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-19qt" data-gwd-name="game_tile_10"></gwd-image>
-            <gwd-image id="game_tile_11" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-rma2 gwd-image-105u" data-gwd-name="game_tile_11"></gwd-image>
-            <gwd-image id="game_tile_12" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-1tot" data-gwd-name="game_tile_12"></gwd-image>
-            <gwd-image id="game_tile_13" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-su9d" data-gwd-name="game_tile_13"></gwd-image>
-            <gwd-image id="game_tile_14" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-195u gwd-image-eief" data-gwd-name="game_tile_14"></gwd-image>
-            <gwd-image id="game_tile_15" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-bmcg gwd-image-169i" data-gwd-name="game_tile_15"></gwd-image>
-            <gwd-image id="game_tile_16" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-5i70 gwd-image-rtum" data-gwd-name="game_tile_16"></gwd-image>
-            <gwd-image id="game_tile_17" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-z6lf gwd-image-4iy9" data-gwd-name="game_tile_17"></gwd-image>
-            <gwd-image id="game_tile_18" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-p2t7 gwd-image-i36j" data-gwd-name="game_tile_18"></gwd-image>
-            <gwd-image id="game_tile_19" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-16u6 gwd-image-1yzg" data-gwd-name="game_tile_19"></gwd-image>
-            <gwd-image id="game_tile_20" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-1946 gwd-image-19yy" data-gwd-name="game_tile_20"></gwd-image>
-            <gwd-image id="game_tile_21" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-5d81 gwd-image-mfva gwd-image-xi3p" data-gwd-name="game_tile_21"></gwd-image>
-            <gwd-image id="game_tile_22" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-5d81 gwd-image-1075 gwd-image-1hpl gwd-image-1paq" data-gwd-name="game_tile_22"></gwd-image>
-            <gwd-image id="game_tile_23" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-5d81 gwd-image-1075 gwd-image-iy86 gwd-image-43c6 gwd-image-14h6" data-gwd-name="game_tile_23"></gwd-image>
-            <gwd-image id="game_tile_24" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-195u gwd-image-7b2b" data-gwd-name="game_tile_24"></gwd-image>
-            <gwd-image id="game_tile_25" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-bmcg gwd-image-co10" data-gwd-name="game_tile_24"></gwd-image>
-            <gwd-image id="game_tile_26" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-5i70 gwd-image-1l03" data-gwd-name="game_tile_24"></gwd-image>
-            <gwd-image id="game_tile_27" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-z6lf gwd-image-cbei" data-gwd-name="game_tile_24"></gwd-image>
-            <gwd-image id="game_tile_28" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-p2t7 gwd-image-s213" data-gwd-name="game_tile_24"></gwd-image>
-            <gwd-image id="game_tile_29" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-16u6 gwd-image-1wmh" data-gwd-name="game_tile_24"></gwd-image>
-            <gwd-image id="game_tile_30" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-1946 gwd-image-f7ud" data-gwd-name="game_tile_24"></gwd-image>
-            <gwd-image id="game_tile_31" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-5d81 gwd-image-mfva gwd-image-1dgi" data-gwd-name="game_tile_24"></gwd-image>
-            <gwd-image id="game_tile_32" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-5d81 gwd-image-1075 gwd-image-1hpl gwd-image-1dpm gwd-image-n5jm" data-gwd-name="game_tile_24"></gwd-image>
-            <gwd-image id="game_tile_33" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-5d81 gwd-image-1075 gwd-image-iy86 gwd-image-43c6 gwd-image-19ef gwd-image-1mro" data-gwd-name="game_tile_24"></gwd-image>
-            <gwd-image id="game_tile_34" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-5d81 gwd-image-1075 gwd-image-1hpl gwd-image-1dpm gwd-image-1iir" data-gwd-name="game_tile_25"></gwd-image>
-            <gwd-image id="game_tile_35" source="14.png?1600605514357" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-5d81 gwd-image-1075 gwd-image-iy86 gwd-image-43c6 gwd-image-19ef gwd-image-1lt0" data-gwd-name="game_tile_25"></gwd-image>
+            <gwd-image id="game_tile_0" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-1w3a" data-gwd-name="game_tile_0"></gwd-image>
+            <gwd-image id="game_tile_1" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-1qdl" data-gwd-name="game_tile_1"></gwd-image>
+            <gwd-image id="game_tile_2" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-1tje" data-gwd-name="game_tile_2"></gwd-image>
+            <gwd-image id="game_tile_3" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-1n3r" data-gwd-name="game_tile_3"></gwd-image>
+            <gwd-image id="game_tile_4" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-1vld gwd-image-1aez" data-gwd-name="game_tile_4"></gwd-image>
+            <gwd-image id="game_tile_5" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-yy2v" data-gwd-name="game_tile_5"></gwd-image>
+            <gwd-image id="game_tile_6" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-ejlz" data-gwd-name="game_tile_6"></gwd-image>
+            <gwd-image id="game_tile_7" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-12vn" data-gwd-name="game_tile_7"></gwd-image>
+            <gwd-image id="game_tile_8" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-bd2r gwd-image-tu3k" data-gwd-name="game_tile_8"></gwd-image>
+            <gwd-image id="game_tile_9" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-1mts" data-gwd-name="game_tile_9"></gwd-image>
+            <gwd-image id="game_tile_10" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-19qt" data-gwd-name="game_tile_10"></gwd-image>
+            <gwd-image id="game_tile_11" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-rma2 gwd-image-105u" data-gwd-name="game_tile_11"></gwd-image>
+            <gwd-image id="game_tile_12" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-1tot" data-gwd-name="game_tile_12"></gwd-image>
+            <gwd-image id="game_tile_13" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-su9d" data-gwd-name="game_tile_13"></gwd-image>
+            <gwd-image id="game_tile_14" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-195u gwd-image-eief" data-gwd-name="game_tile_14"></gwd-image>
+            <gwd-image id="game_tile_15" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-bmcg gwd-image-169i" data-gwd-name="game_tile_15"></gwd-image>
+            <gwd-image id="game_tile_16" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-5i70 gwd-image-rtum" data-gwd-name="game_tile_16"></gwd-image>
+            <gwd-image id="game_tile_17" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-z6lf gwd-image-4iy9" data-gwd-name="game_tile_17"></gwd-image>
+            <gwd-image id="game_tile_18" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-p2t7 gwd-image-i36j" data-gwd-name="game_tile_18"></gwd-image>
+            <gwd-image id="game_tile_19" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-16u6 gwd-image-1yzg" data-gwd-name="game_tile_19"></gwd-image>
+            <gwd-image id="game_tile_20" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-1946 gwd-image-19yy" data-gwd-name="game_tile_20"></gwd-image>
+            <gwd-image id="game_tile_21" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-5d81 gwd-image-mfva gwd-image-xi3p" data-gwd-name="game_tile_21"></gwd-image>
+            <gwd-image id="game_tile_22" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-5d81 gwd-image-1075 gwd-image-1hpl gwd-image-1paq" data-gwd-name="game_tile_22"></gwd-image>
+            <gwd-image id="game_tile_23" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-5d81 gwd-image-1075 gwd-image-iy86 gwd-image-43c6 gwd-image-14h6" data-gwd-name="game_tile_23"></gwd-image>
+            <gwd-image id="game_tile_24" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-195u gwd-image-7b2b" data-gwd-name="game_tile_24"></gwd-image>
+            <gwd-image id="game_tile_25" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-bmcg gwd-image-co10" data-gwd-name="game_tile_24"></gwd-image>
+            <gwd-image id="game_tile_26" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-5i70 gwd-image-1l03" data-gwd-name="game_tile_24"></gwd-image>
+            <gwd-image id="game_tile_27" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-z6lf gwd-image-cbei" data-gwd-name="game_tile_24"></gwd-image>
+            <gwd-image id="game_tile_28" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-p2t7 gwd-image-s213" data-gwd-name="game_tile_24"></gwd-image>
+            <gwd-image id="game_tile_29" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-16u6 gwd-image-1wmh" data-gwd-name="game_tile_24"></gwd-image>
+            <gwd-image id="game_tile_30" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-1946 gwd-image-f7ud" data-gwd-name="game_tile_24"></gwd-image>
+            <gwd-image id="game_tile_31" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-5d81 gwd-image-mfva gwd-image-1dgi" data-gwd-name="game_tile_24"></gwd-image>
+            <gwd-image id="game_tile_32" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-5d81 gwd-image-1075 gwd-image-1hpl gwd-image-1dpm gwd-image-n5jm" data-gwd-name="game_tile_24"></gwd-image>
+            <gwd-image id="game_tile_33" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-5d81 gwd-image-1075 gwd-image-iy86 gwd-image-43c6 gwd-image-19ef gwd-image-1mro" data-gwd-name="game_tile_24"></gwd-image>
+            <gwd-image id="game_tile_34" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-5d81 gwd-image-1075 gwd-image-1hpl gwd-image-1dpm gwd-image-1iir" data-gwd-name="game_tile_25"></gwd-image>
+            <gwd-image id="game_tile_35" source="14.png?1600748147317" scaling="stretch" class="gwd-image-2p6f gwd-image-c7th gwd-image-tjus gwd-image-f0c4 gwd-image-16hz gwd-image-zgsw gwd-image-pg3k gwd-image-a5zl gwd-image-kw95 gwd-image-zk4p gwd-image-2dav gwd-image-aovr gwd-image-tssp gwd-image-4sf1 gwd-image-15oa gwd-image-zsdd gwd-image-10o5 gwd-image-1r0a gwd-image-16tf gwd-image-8op4 gwd-image-15gg gwd-image-5d81 gwd-image-1075 gwd-image-iy86 gwd-image-43c6 gwd-image-19ef gwd-image-1lt0" data-gwd-name="game_tile_25"></gwd-image>
             <div class="gwd-div-kkqz" id="game_tile_14_river_bg_div">
-              <gwd-image id="game_tile_14_amazon_river" source="17.png?1600605514357" scaling="stretch" class="gwd-image-okcd" data-gwd-name="game_tile_14_amazon_river"></gwd-image>
+              <gwd-image id="game_tile_14_amazon_river" source="17.png?1600748147317" scaling="stretch" class="gwd-image-okcd" data-gwd-name="game_tile_14_amazon_river"></gwd-image>
             </div>
-            <gwd-image id="game_tile_13_left_river" source="3.png?1600605514357" scaling="stretch" class="gwd-image-8e66" data-gwd-name="game_tile_13_left_river"></gwd-image>
-            <gwd-image id="game_tile_15_left_river" source="1.png?1600605514357" scaling="stretch" class="gwd-image-1fw1" data-gwd-name="game_tile_15_left_river"></gwd-image>
+            <gwd-image id="game_tile_13_left_river" source="3.png?1600748147317" scaling="stretch" class="gwd-image-8e66" data-gwd-name="game_tile_13_left_river"></gwd-image>
+            <gwd-image id="game_tile_15_left_river" source="1.png?1600748147317" scaling="stretch" class="gwd-image-1fw1" data-gwd-name="game_tile_15_left_river"></gwd-image>
           </div>
-          <div class="gwd-div-1rdp" id="menu_bar">
+          <div class="gwd-div-1rdp" id="menu_bar_game">
             <p class="gwd-p-i5tr" id="game_to_home_button">Back</p>
           </div>
           <div class="gwd-div-1223" id="saci_perere_div">
-            <gwd-image id="saci_onelegged_walking_2" source="saci_onelegged_walking_2.png?1600605514357" scaling="stretch" class="gwd-image-1eh6" data-gwd-name="saci_onelegged_walking_2"></gwd-image>
-            <gwd-image id="saci_onelegged_walking_1" source="saci_onelegged_walking_1.png?1600605514357" scaling="stretch" class="gwd-image-1gk6 gwd-gen-1860gwdanimation" data-gwd-name="saci_onelegged_walking_1"></gwd-image>
-            <gwd-image id="saci-willy-willy" source="Saci-willy-willy.png?1600605514357" scaling="stretch" class="gwd-image-1uik" data-gwd-name="saci-willy-willy"></gwd-image>
+            <gwd-image id="saci_onelegged_walking_2" source="saci_onelegged_walking_2.png?1600748147317" scaling="stretch" class="gwd-image-1eh6" data-gwd-name="saci_onelegged_walking_2"></gwd-image>
+            <gwd-image id="saci_onelegged_walking_1" source="saci_onelegged_walking_1.png?1600748147317" scaling="stretch" class="gwd-image-1gk6 gwd-gen-1860gwdanimation" data-gwd-name="saci_onelegged_walking_1"></gwd-image>
+            <gwd-image id="saci-willy-willy" source="Saci-willy-willy.png?1600748147317" scaling="stretch" class="gwd-image-1uik" data-gwd-name="saci-willy-willy"></gwd-image>
             <div class="gwd-animation-event hiddingSaci-1-animation" data-event-name="hiddingSaci-1" data-event-time="300"></div>
             <div class="gwd-animation-event event-2-animation" data-event-name="event-2" data-event-time="600"></div>
             <div class="gwd-animation-event event-3-animation" data-event-name="event-3" data-event-time="700"></div>
@@ -4246,16 +4266,16 @@ body {
           </div>
           <div class="gwd-div-jme4" id="projecttile_path_div">
             <div class="gwd-div-1wqm gwd-gen-197igwdanimation" id="farmer-div">
-              <gwd-image id="run_9_farmer" source="Run_9_farmer.png?1600605514357" scaling="stretch" class="gwd-image-17kq" data-gwd-name="run_9_farmer"></gwd-image>
-              <gwd-image id="run_8_farmer" source="Run_8_farmer.png?1600605514357" scaling="stretch" class="gwd-image-5h6c" data-gwd-name="run_8_farmer"></gwd-image>
-              <gwd-image id="run_7_farmer" source="Run_7_farmer.png?1600605514357" scaling="stretch" class="gwd-image-yi85" data-gwd-name="run_7_farmer"></gwd-image>
-              <gwd-image id="run_6_farmer" source="Run_6_farmer.png?1600605514357" scaling="stretch" class="gwd-image-ji9n" data-gwd-name="run_6_farmer"></gwd-image>
-              <gwd-image id="run_5_farmer" source="Run_5_farmer.png?1600605514357" scaling="stretch" class="gwd-image-16ka" data-gwd-name="run_5_farmer"></gwd-image>
-              <gwd-image id="run_4_farmer" source="Run_4_farmer.png?1600605514357" scaling="stretch" class="gwd-image-nodj" data-gwd-name="run_4_farmer"></gwd-image>
-              <gwd-image id="run_3_farmer" source="Run_3_farmer.png?1600605514357" scaling="stretch" class="gwd-image-cq4y" data-gwd-name="run_3_farmer"></gwd-image>
-              <gwd-image id="run_2_farmer" source="Run_2_farmer.png?1600605514357" scaling="stretch" class="gwd-image-1456" data-gwd-name="run_2_farmer"></gwd-image>
-              <gwd-image id="run_1_farmer" source="Run_1_farmer.png?1600605514357" scaling="stretch" class="gwd-image-1k0a" data-gwd-name="run_1_farmer"></gwd-image>
-              <gwd-image id="run_0_farmer" source="Run_0_farmer.png?1600605514357" scaling="stretch" class="gwd-image-fkwm" data-gwd-name="run_0_farmer"></gwd-image>
+              <gwd-image id="run_9_farmer" source="Run_9_farmer.png?1600748147317" scaling="stretch" class="gwd-image-17kq" data-gwd-name="run_9_farmer"></gwd-image>
+              <gwd-image id="run_8_farmer" source="Run_8_farmer.png?1600748147317" scaling="stretch" class="gwd-image-5h6c" data-gwd-name="run_8_farmer"></gwd-image>
+              <gwd-image id="run_7_farmer" source="Run_7_farmer.png?1600748147317" scaling="stretch" class="gwd-image-yi85" data-gwd-name="run_7_farmer"></gwd-image>
+              <gwd-image id="run_6_farmer" source="Run_6_farmer.png?1600748147317" scaling="stretch" class="gwd-image-ji9n" data-gwd-name="run_6_farmer"></gwd-image>
+              <gwd-image id="run_5_farmer" source="Run_5_farmer.png?1600748147317" scaling="stretch" class="gwd-image-16ka" data-gwd-name="run_5_farmer"></gwd-image>
+              <gwd-image id="run_4_farmer" source="Run_4_farmer.png?1600748147317" scaling="stretch" class="gwd-image-nodj" data-gwd-name="run_4_farmer"></gwd-image>
+              <gwd-image id="run_3_farmer" source="Run_3_farmer.png?1600748147317" scaling="stretch" class="gwd-image-cq4y" data-gwd-name="run_3_farmer"></gwd-image>
+              <gwd-image id="run_2_farmer" source="Run_2_farmer.png?1600748147317" scaling="stretch" class="gwd-image-1456" data-gwd-name="run_2_farmer"></gwd-image>
+              <gwd-image id="run_1_farmer" source="Run_1_farmer.png?1600748147317" scaling="stretch" class="gwd-image-1k0a" data-gwd-name="run_1_farmer"></gwd-image>
+              <gwd-image id="run_0_farmer" source="Run_0_farmer.png?1600748147317" scaling="stretch" class="gwd-image-fkwm" data-gwd-name="run_0_farmer"></gwd-image>
               <div class="gwd-animation-event event-10-animation" data-event-name="event-10" data-event-time="0.1"></div>
               <div class="gwd-animation-event event-11-animation" data-event-name="event-11" data-event-time="200"></div>
               <div class="gwd-animation-event event-12-animation" data-event-name="event-12" data-event-time="400"></div>

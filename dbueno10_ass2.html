@@ -131,29 +131,11 @@
       width: 9%;
       height: 16%;
     }
-    .gwd-image-rk7d {
-      display: block;
-      position: absolute;
-      visibility: hidden;
-      left: 32.98%;
-      top: 8%;
-      width: 9%;
-      height: 16%;
-    }
     .gwd-div-8fdg {
       visibility: hidden;
     }
     .gwd-img-12lz {
       visibility: hidden;
-    }
-    .gwd-image-rap7 {
-      display: block;
-      position: absolute;
-      transform-origin: 50% 50% 0px;
-      left: 32.98%;
-      top: 8%;
-      width: 9%;
-      height: 16%;
     }
     .gwd-image-5bk0 {
       display: block;
@@ -1159,13 +1141,44 @@
       left: 181px;
       top: 29px;
     }
-    .gwd-span-1kql {
+    .gwd-div-177a {
+      visibility: hidden;
+    }
+    .gwd-img-1bvc {
+      visibility: hidden;
+    }
+    .gwd-image-rap7 {
+      display: block;
       position: absolute;
-      left: 120px;
-      top: 59px;
       transform-origin: 50% 50% 0px;
-      width: 523px;
+      left: 33%;
+      top: 8%;
+      width: 9%;
+      height: 16%;
+    }
+    .gwd-image-rk7d {
+      display: block;
+      position: absolute;
+      visibility: hidden;
+      left: 33%;
+      top: 8%;
+      width: 9%;
+      height: 16%;
+    }
+    .gwd-div-hov7 {
+      visibility: hidden;
+    }
+    .gwd-img-gcjt {
+      visibility: hidden;
+    }
+    .gwd-span-1kql {
+      display: block;
       height: 140px;
+      left: 120px;
+      position: absolute;
+      top: 59px;
+      width: 523px;
+      transform-origin: 50% 50% 0px;
     }
     @media (width: 667px) and (height: 375px) {
       .gwd-image-1tan {
@@ -1449,23 +1462,23 @@
     };
     gwd.auto_Saci_perere_divEvent_23 = function(event) {
       // GWD Predefined Function
-      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_2', 'fade', 1000, 'linear', 'top');
-    };
-    gwd.auto_UnSelectedCreditsButtonClick = function(event) {
-      // GWD Predefined Function
-      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_2', 'fade', 1000, 'linear', 'top');
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'Credits', 'fade', 1000, 'linear', 'top');
     };
     gwd.auto_SelectedHelpButtonClick = function(event) {
       // GWD Predefined Function
-      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_3', 'fade', 1000, 'linear', 'top');
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'Help', 'fade', 1000, 'linear', 'top');
     };
-    gwd.auto_UnSelectedHelpButtonClick = function(event) {
+    gwd.auto_SelectedCreditsButtonClick = function(event) {
       // GWD Predefined Function
-      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_3', 'fade', 1000, 'linear', 'top');
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'Credits', 'fade', 1000, 'linear', 'top');
     };
-    gwd.auto_UnSelectedCreditsButtonClick1 = function(event) {
+    gwd.auto_Game_to_home_button_1Click = function(event) {
       // GWD Predefined Function
-      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_2', 'fade', 1000, 'linear', 'top');
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home', 'fade', 750, 'linear', 'left');
+    };
+    gwd.auto_Help_to_home_buttonClick = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home', 'fade', 750, 'linear', 'left');
     };
   </script>
   <script type="text/javascript" gwd-events="registration">
@@ -1482,10 +1495,6 @@
       gwd.actions.events.addHandler('UnSelectedExitButton', 'click', gwd.closeWindow, false);
       gwd.actions.events.addHandler('UnSelectedCreditsButton', 'mouseover', gwd.onMouseOverCreditsButton, false);
       gwd.actions.events.addHandler('UnSelectedCreditsButton', 'mouseout', gwd.onMouseOutCreditsButton, false);
-      gwd.actions.events.addHandler('SelectedHelpButton', 'mouseover', gwd.onMouseOverHelpButton, false);
-      gwd.actions.events.addHandler('SelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
-      gwd.actions.events.addHandler('UnSelectedHelpButton', 'mouseover', gwd.onMouseOverHelpButton, false);
-      gwd.actions.events.addHandler('UnSelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
       gwd.actions.events.addHandler('SelectedPlayButton', 'mouseout', gwd.onMouseOutPlay, false);
       gwd.actions.events.addHandler('SelectedPlayButton', 'mouseover', gwd.onMouseOverPlay, false);
       gwd.actions.events.addHandler('SelectedPlayButton', 'click', gwd.auto_SelectedPlayButtonClick, false);
@@ -1521,10 +1530,14 @@
       gwd.actions.events.addHandler('saci_perere_div', 'event-23', gwd.auto_Saci_perere_divEvent_23, false);
       gwd.actions.events.addHandler('projecttile_path_div', 'CollisionWithFarmer', gwd.evaluateCollisionWithFarmar, false);
       gwd.actions.events.addHandler('saci_perere_div', 'event-23', gwd.gameOverMessage, false);
-      gwd.actions.events.addHandler('UnSelectedCreditsButton', 'click', gwd.auto_UnSelectedCreditsButtonClick, false);
+      gwd.actions.events.addHandler('UnSelectedHelpButton', 'mouseover', gwd.onMouseOverHelpButton, false);
+      gwd.actions.events.addHandler('UnSelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
+      gwd.actions.events.addHandler('SelectedHelpButton', 'mouseover', gwd.onMouseOverHelpButton, false);
+      gwd.actions.events.addHandler('SelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
       gwd.actions.events.addHandler('SelectedHelpButton', 'click', gwd.auto_SelectedHelpButtonClick, false);
-      gwd.actions.events.addHandler('UnSelectedHelpButton', 'click', gwd.auto_UnSelectedHelpButtonClick, false);
-      gwd.actions.events.addHandler('UnSelectedCreditsButton', 'click', gwd.auto_UnSelectedCreditsButtonClick1, false);
+      gwd.actions.events.addHandler('SelectedCreditsButton', 'click', gwd.auto_SelectedCreditsButtonClick, false);
+      gwd.actions.events.addHandler('credits_to_home_button', 'click', gwd.auto_Game_to_home_button_1Click, false);
+      gwd.actions.events.addHandler('help_to_home_button', 'click', gwd.auto_Help_to_home_buttonClick, false);
       gwd.actions.timeline.captureAnimationEnd(document.body);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
@@ -1538,10 +1551,6 @@
       gwd.actions.events.removeHandler('UnSelectedExitButton', 'click', gwd.closeWindow, false);
       gwd.actions.events.removeHandler('UnSelectedCreditsButton', 'mouseover', gwd.onMouseOverCreditsButton, false);
       gwd.actions.events.removeHandler('UnSelectedCreditsButton', 'mouseout', gwd.onMouseOutCreditsButton, false);
-      gwd.actions.events.removeHandler('SelectedHelpButton', 'mouseover', gwd.onMouseOverHelpButton, false);
-      gwd.actions.events.removeHandler('SelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
-      gwd.actions.events.removeHandler('UnSelectedHelpButton', 'mouseover', gwd.onMouseOverHelpButton, false);
-      gwd.actions.events.removeHandler('UnSelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
       gwd.actions.events.removeHandler('SelectedPlayButton', 'mouseout', gwd.onMouseOutPlay, false);
       gwd.actions.events.removeHandler('SelectedPlayButton', 'mouseover', gwd.onMouseOverPlay, false);
       gwd.actions.events.removeHandler('SelectedPlayButton', 'click', gwd.auto_SelectedPlayButtonClick, false);
@@ -1577,10 +1586,14 @@
       gwd.actions.events.removeHandler('saci_perere_div', 'event-23', gwd.auto_Saci_perere_divEvent_23, false);
       gwd.actions.events.removeHandler('projecttile_path_div', 'CollisionWithFarmer', gwd.evaluateCollisionWithFarmar, false);
       gwd.actions.events.removeHandler('saci_perere_div', 'event-23', gwd.gameOverMessage, false);
-      gwd.actions.events.removeHandler('UnSelectedCreditsButton', 'click', gwd.auto_UnSelectedCreditsButtonClick, false);
+      gwd.actions.events.removeHandler('UnSelectedHelpButton', 'mouseover', gwd.onMouseOverHelpButton, false);
+      gwd.actions.events.removeHandler('UnSelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
+      gwd.actions.events.removeHandler('SelectedHelpButton', 'mouseover', gwd.onMouseOverHelpButton, false);
+      gwd.actions.events.removeHandler('SelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
       gwd.actions.events.removeHandler('SelectedHelpButton', 'click', gwd.auto_SelectedHelpButtonClick, false);
-      gwd.actions.events.removeHandler('UnSelectedHelpButton', 'click', gwd.auto_UnSelectedHelpButtonClick, false);
-      gwd.actions.events.removeHandler('UnSelectedCreditsButton', 'click', gwd.auto_UnSelectedCreditsButtonClick1, false);
+      gwd.actions.events.removeHandler('SelectedCreditsButton', 'click', gwd.auto_SelectedCreditsButtonClick, false);
+      gwd.actions.events.removeHandler('credits_to_home_button', 'click', gwd.auto_Game_to_home_button_1Click, false);
+      gwd.actions.events.removeHandler('help_to_home_button', 'click', gwd.auto_Help_to_home_buttonClick, false);
       gwd.actions.timeline.releaseAnimationEnd(document.body);
     };
     document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
@@ -1599,28 +1612,35 @@
           <gwd-image id="home_background" source="assets/BG-1920-1440.png" scaling="stretch" class="gwd-image-111r" data-gwd-name="home_background"></gwd-image>
           <gwd-image id="UnSelectedPlayButton" source="assets/UnSelectedPlayButton.png" scaling="stretch" class="gwd-image-ghs9" data-gwd-name="UnSelectedPlayButton" alt="Play"></gwd-image>
           <gwd-image id="SelectedPlayButton" source="assets/SelectedPlayButton.png" scaling="stretch" class="gwd-image-5bk0" alt="Play now!" data-gwd-name="SelectedPlayButton"></gwd-image>
-          <gwd-image id="UnSelectedHelpButton" source="assets/UnSelectedHelpButton.png" scaling="stretch" class="gwd-image-rap7"></gwd-image>
-          <gwd-image id="SelectedHelpButton" source="assets/SelectedHelpButton.png" scaling="stretch" class="gwd-image-rk7d"></gwd-image>
           <gwd-image id="UnSelectedCreditsButton" source="assets/UnSelectedCreditsButton.png" scaling="stretch" class="gwd-image-47u4"></gwd-image>
           <gwd-image id="UnSelectedExitButton" source="assets/UnSelectedExitButton.png" scaling="stretch" class="gwd-image-hqhd"></gwd-image>
           <gwd-image id="SelectedExitButton" source="assets/SelectedExitButton.png" scaling="stretch" class="gwd-image-c88z"></gwd-image>
           <gwd-image id="SelectedCreditsButton" source="assets/SelectedCreditsButton.png" scaling="stretch" class="gwd-image-debh"></gwd-image>
+          <gwd-image id="UnSelectedHelpButton" source="assets/UnSelectedHelpButton.png" scaling="stretch" class="gwd-image-rap7"></gwd-image>
+          <gwd-image id="SelectedHelpButton" source="assets/SelectedHelpButton.png" scaling="stretch" class="gwd-image-rk7d"></gwd-image>
         </div>
       </div>
     </gwd-page>
-    <gwd-page id="home_2" class="gwd-page-wrapper home-content gwd-lightbox gwd-page-1tis" data-gwd-width="100%" data-gwd-height="100%" data-gwd-name="Credits">
+    <gwd-page id="Credits" class="gwd-page-wrapper home-content gwd-lightbox gwd-page-1tis" data-gwd-width="100%" data-gwd-height="100%" data-gwd-name="Credits">
       <div class="gwd-page-content home-content gwd-div-1hld">
         <div class="gwd-div-1kid" id="credits_main_div">
           <gwd-image id="credits_background" source="assets/BG-1920-1440.png" scaling="stretch" class="gwd-image-111r" data-gwd-name="credits_background"></gwd-image>
+          <div class="gwd-div-1rdp" id="menu_bar_credits">
+            <p class="gwd-p-i5tr" id="credits_to_home_button">Back</p>
+          </div>
         </div>
         <span class="gwd-span-1yt0 text-tool-feedback">Credits Page</span></div>
     </gwd-page>
-    <gwd-page id="home_3" class="gwd-page-wrapper home-content gwd-lightbox gwd-page-1tis" data-gwd-width="100%" data-gwd-height="100%" data-gwd-name="Help">
+    <gwd-page id="Help" class="gwd-page-wrapper home-content gwd-lightbox gwd-page-1tis" data-gwd-width="100%" data-gwd-height="100%" data-gwd-name="Help">
       <div class="gwd-page-content home-content gwd-div-1hld">
         <div class="gwd-div-1kid" id="help_main_div">
           <gwd-image id="help_background" source="assets/BG-1920-1440.png" scaling="stretch" class="gwd-image-111r" data-gwd-name="help_background"></gwd-image>
+          <span class="gwd-span-1kql">Help page:<br><br>Click/Touch somewhere on screen to run the command "Saci-perere willy-willy"<br><br><br>Run on iPhone 6/7/8 landscape screen.</span>
+          <div class="gwd-div-1rdp" id="menu_bar_help">
+            <p class="gwd-p-i5tr" id="help_to_home_button">Back</p>
+          </div>
         </div>
-        <span class="gwd-span-1kql text-tool-feedback">Help page:<br><br>Click/Touch somewhere on screen to run the command "Saci-perere willy-willy"<br><br><br>Run on iPhone 6/7/8 landscape screen.</span></div>
+      </div>
     </gwd-page>
     <gwd-page id="home_1" class="gwd-page-wrapper gwd-lightbox gwd-page-1g8m" data-gwd-width="100%" data-gwd-height="100%" data-gwd-name="Game">
       <div class="gwd-page-content gwd-div-a8bz">
@@ -1672,7 +1692,7 @@
             <gwd-image id="game_tile_13_left_river" source="assets/3.png" scaling="stretch" class="gwd-image-8e66" data-gwd-name="game_tile_13_left_river"></gwd-image>
             <gwd-image id="game_tile_15_left_river" source="assets/1.png" scaling="stretch" class="gwd-image-1fw1" data-gwd-name="game_tile_15_left_river"></gwd-image>
           </div>
-          <div class="gwd-div-1rdp" id="menu_bar">
+          <div class="gwd-div-1rdp" id="menu_bar_game">
             <p class="gwd-p-i5tr" id="game_to_home_button">Back</p>
           </div>
           <div class="gwd-div-1223" id="saci_perere_div" data-gwd-animation-labels="walking_start,0;hiddingSaci-1,300;hiddingSaci-2,600;willy-willy-start,700;collision-start,2400;collision-end,3400">
