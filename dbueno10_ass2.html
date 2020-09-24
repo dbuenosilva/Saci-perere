@@ -11,6 +11,7 @@
   <link href="gwdpagedeck_style.css" rel="stylesheet" data-version="14" data-exports-type="gwd-pagedeck">
   <link href="gwdimage_style.css" rel="stylesheet" data-version="15" data-exports-type="gwd-image">
   <link href="gwdtaparea_style.css" rel="stylesheet" data-version="7" data-exports-type="gwd-taparea">
+  <link href="gwdaudio_style.css" rel="stylesheet" data-version="6" data-exports-type="gwd-audio">
   <style type="text/css" id="gwd-text-style">
     p {
       margin: 0px;
@@ -1822,6 +1823,69 @@
     .gwd-play-animation #farmer-div .gwd-gen-1azmgwdanimation {
       animation: 3.1s linear 0s 1 normal forwards running gwd-gen-1azmgwdanimation_gwd-keyframes;
     }
+    .gwd-div-gkvj {
+      visibility: visible;
+    }
+    .gwd-audio-15bq {
+      visibility: visible;
+    }
+    .gwd-div-i1x5 {
+      visibility: visible;
+    }
+    .gwd-audio-6hx9 {
+      visibility: visible;
+    }
+    .gwd-div-1hiz {
+      visibility: visible;
+    }
+    .gwd-audio-1dsl {
+      visibility: visible;
+    }
+    .gwd-audio-to05 {
+      border-color: rgba(0, 0, 0, 0);
+      display: block;
+      position: absolute;
+      transform-origin: 50% 50% 0px;
+      background-image: none;
+      background-color: rgb(255, 255, 255);
+      width: 26.84%;
+      height: 108%;
+      left: 102.33%;
+      top: 48.35%;
+      visibility: hidden;
+    }
+    .gwd-image-18n5 {
+      position: absolute;
+      transform-origin: 50% 50% 0px;
+      top: 8%;
+      width: 3%;
+      height: 79.97%;
+      visibility: visible;
+      left: 95%;
+    }
+    .gwd-image-a83x {
+      position: absolute;
+      width: 3%;
+      height: 80.46%;
+      top: 8%;
+      visibility: hidden;
+      left: 95%;
+    }
+    .gwd-image-1c60 {
+      position: absolute;
+      top: 8%;
+      width: 3%;
+      height: 80.45%;
+      left: 2%;
+    }
+    .gwd-image-1j5l {
+      position: absolute;
+      top: 8%;
+      width: 3%;
+      height: 80.45%;
+      left: 2%;
+      visibility: hidden;
+    }
     @media (width: 667px) and (height: 375px) {
       .gwd-image-1tan {
         left: 0px;
@@ -1899,14 +1963,6 @@
     gwd.auto_SelectedPlayButtonClick = function(event) {
       // GWD Predefined Function
       gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_1', 'fade', 1000, 'linear', 'top');
-    };
-    gwd.auto_UnSelectedPlayButtonClick = function(event) {
-      // GWD Predefined Function
-      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_1', 'fade', 1000, 'linear', 'top');
-    };
-    gwd.auto_Game_to_home_buttonClick = function(event) {
-      // GWD Predefined Function
-      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home', 'fade', 750, 'linear', 'left');
     };
     gwd.auto_Game_main_divEvent_1 = function(event) {
       // GWD Predefined Function
@@ -1996,9 +2052,44 @@
       // GWD Predefined Function
       gwd.actions.timeline.gotoAndPlay('projecttile_path_div', 'callRandomFarmer');
     };
+    gwd.onMouseOverSoundButton = function(event) {
+      var iUnSelectedSoundButton = document.getElementById("SoundButtonUnselected");
+      var iSelectedSoundButton = document.getElementById("SoundButtonSelected");
+      iUnSelectedSoundButton.style.visibility = "hidden";
+      iSelectedSoundButton.style.visibility = "visible";
+    };
+    gwd.onMouseOutSoundButton = function(event) {
+      var iUnSelectedSoundButton = document.getElementById("SoundButtonUnselected");
+      var iSelectedSoundButton = document.getElementById("SoundButtonSelected");
+      iUnSelectedSoundButton.style.visibility = "visible";
+      iSelectedSoundButton.style.visibility = "hidden";
+    };
+    gwd.setSoundBgVolume = function(event) {
+      document.getElementById("gwd-audio_background").volume = 0.05;
+    };
+    gwd.onMouseOverBackButton = function(event) {
+      var iUnSelectedBackButton = document.getElementById("BackButtonUnselected");
+      var iSelectedBackButton = document.getElementById("BackButtonSelected");
+      iUnSelectedBackButton.style.visibility = "hidden";
+      iSelectedBackButton.style.visibility = "visible";
+    };
+    gwd.onMouseOutBackButton = function(event) {
+      var iUnSelectedBackButton = document.getElementById("BackButtonUnselected");
+      var iSelectedBackButton = document.getElementById("BackButtonSelected");
+      iUnSelectedBackButton.style.visibility = "visible";
+      iSelectedBackButton.style.visibility = "hidden";
+    };
     gwd.auto_Farmer_divEvent_36 = function(event) {
       // GWD Predefined Function
       gwd.actions.timeline.gotoAndPlay('farmer-div', 'farmer_running');
+    };
+    gwd.auto_SoundButtonSelectedClick = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdAudio.mute('gwd-audio_background');
+    };
+    gwd.auto_BackButtonSelectedClick = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home', 'fade', 1000, 'linear', 'top');
     };
   </script>
   <script type="text/javascript" gwd-events="registration">
@@ -2018,10 +2109,8 @@
       gwd.actions.events.addHandler('SelectedPlayButton', 'mouseout', gwd.onMouseOutPlay, false);
       gwd.actions.events.addHandler('SelectedPlayButton', 'mouseover', gwd.onMouseOverPlay, false);
       gwd.actions.events.addHandler('SelectedPlayButton', 'click', gwd.auto_SelectedPlayButtonClick, false);
-      gwd.actions.events.addHandler('UnSelectedPlayButton', 'click', gwd.auto_UnSelectedPlayButtonClick, false);
       gwd.actions.events.addHandler('UnSelectedPlayButton', 'mouseover', gwd.onMouseOverPlay, false);
       gwd.actions.events.addHandler('UnSelectedPlayButton', 'mouseout', gwd.onMouseOutPlay, false);
-      gwd.actions.events.addHandler('game_to_home_button', 'click', gwd.auto_Game_to_home_buttonClick, false);
       gwd.actions.events.addHandler('game_main_div', 'event-1', gwd.auto_Game_main_divEvent_1, false);
       gwd.actions.events.addHandler('gwd-williy-willy-tap', 'action', gwd.auto_Gwd_williy_willy_tapAction, false);
       gwd.actions.events.addHandler('home_1', 'pagepresenting', gwd.init, false);
@@ -2056,6 +2145,18 @@
       gwd.actions.events.addHandler('farmer-div', 'event-34', gwd.evaluateCollisionWithFarmer, false);
       gwd.actions.events.addHandler('farmer-div', 'event-35', gwd.evaluateCollisionWithFarmer, false);
       gwd.actions.events.addHandler('farmer-div', 'event-36', gwd.auto_Farmer_divEvent_36, false);
+      gwd.actions.events.addHandler('SoundButtonSelected', 'click', gwd.auto_SoundButtonSelectedClick, false);
+      gwd.actions.events.addHandler('SoundButtonUnselected', 'mouseover', gwd.onMouseOverSoundButton, false);
+      gwd.actions.events.addHandler('SoundButtonUnselected', 'mouseout', gwd.onMouseOutSoundButton, false);
+      gwd.actions.events.addHandler('SoundButtonSelected', 'mouseover', gwd.onMouseOverSoundButton, false);
+      gwd.actions.events.addHandler('SoundButtonSelected', 'mouseout', gwd.onMouseOutSoundButton, false);
+      gwd.actions.events.addHandler('SoundButtonSelected', 'click', gwd.setSoundBgVolume, false);
+      gwd.actions.events.addHandler('SelectedPlayButton', 'click', gwd.setSoundBgVolume, false);
+      gwd.actions.events.addHandler('BackButtonUnselected', 'mouseover', gwd.onMouseOverBackButton, false);
+      gwd.actions.events.addHandler('BackButtonUnselected', 'mouseout', gwd.onMouseOutBackButton, false);
+      gwd.actions.events.addHandler('BackButtonSelected', 'mouseover', gwd.onMouseOverBackButton, false);
+      gwd.actions.events.addHandler('BackButtonSelected', 'mouseout', gwd.onMouseOutBackButton, false);
+      gwd.actions.events.addHandler('BackButtonSelected', 'click', gwd.auto_BackButtonSelectedClick, false);
       gwd.actions.timeline.captureAnimationEnd(document.body);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
@@ -2072,10 +2173,8 @@
       gwd.actions.events.removeHandler('SelectedPlayButton', 'mouseout', gwd.onMouseOutPlay, false);
       gwd.actions.events.removeHandler('SelectedPlayButton', 'mouseover', gwd.onMouseOverPlay, false);
       gwd.actions.events.removeHandler('SelectedPlayButton', 'click', gwd.auto_SelectedPlayButtonClick, false);
-      gwd.actions.events.removeHandler('UnSelectedPlayButton', 'click', gwd.auto_UnSelectedPlayButtonClick, false);
       gwd.actions.events.removeHandler('UnSelectedPlayButton', 'mouseover', gwd.onMouseOverPlay, false);
       gwd.actions.events.removeHandler('UnSelectedPlayButton', 'mouseout', gwd.onMouseOutPlay, false);
-      gwd.actions.events.removeHandler('game_to_home_button', 'click', gwd.auto_Game_to_home_buttonClick, false);
       gwd.actions.events.removeHandler('game_main_div', 'event-1', gwd.auto_Game_main_divEvent_1, false);
       gwd.actions.events.removeHandler('gwd-williy-willy-tap', 'action', gwd.auto_Gwd_williy_willy_tapAction, false);
       gwd.actions.events.removeHandler('home_1', 'pagepresenting', gwd.init, false);
@@ -2110,6 +2209,18 @@
       gwd.actions.events.removeHandler('farmer-div', 'event-34', gwd.evaluateCollisionWithFarmer, false);
       gwd.actions.events.removeHandler('farmer-div', 'event-35', gwd.evaluateCollisionWithFarmer, false);
       gwd.actions.events.removeHandler('farmer-div', 'event-36', gwd.auto_Farmer_divEvent_36, false);
+      gwd.actions.events.removeHandler('SoundButtonSelected', 'click', gwd.auto_SoundButtonSelectedClick, false);
+      gwd.actions.events.removeHandler('SoundButtonUnselected', 'mouseover', gwd.onMouseOverSoundButton, false);
+      gwd.actions.events.removeHandler('SoundButtonUnselected', 'mouseout', gwd.onMouseOutSoundButton, false);
+      gwd.actions.events.removeHandler('SoundButtonSelected', 'mouseover', gwd.onMouseOverSoundButton, false);
+      gwd.actions.events.removeHandler('SoundButtonSelected', 'mouseout', gwd.onMouseOutSoundButton, false);
+      gwd.actions.events.removeHandler('SoundButtonSelected', 'click', gwd.setSoundBgVolume, false);
+      gwd.actions.events.removeHandler('SelectedPlayButton', 'click', gwd.setSoundBgVolume, false);
+      gwd.actions.events.removeHandler('BackButtonUnselected', 'mouseover', gwd.onMouseOverBackButton, false);
+      gwd.actions.events.removeHandler('BackButtonUnselected', 'mouseout', gwd.onMouseOutBackButton, false);
+      gwd.actions.events.removeHandler('BackButtonSelected', 'mouseover', gwd.onMouseOverBackButton, false);
+      gwd.actions.events.removeHandler('BackButtonSelected', 'mouseout', gwd.onMouseOutBackButton, false);
+      gwd.actions.events.removeHandler('BackButtonSelected', 'click', gwd.auto_BackButtonSelectedClick, false);
       gwd.actions.timeline.releaseAnimationEnd(document.body);
     };
     document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
@@ -2117,6 +2228,7 @@
   </script>
   <script data-source="gwdimage_min.js" data-version="15" data-exports-type="gwd-image" src="gwdimage_min.js"></script>
   <script data-source="gwdtaparea_min.js" data-version="7" data-exports-type="gwd-taparea" src="gwdtaparea_min.js"></script>
+  <script data-source="gwdaudio_min.js" data-version="6" data-exports-type="gwd-audio" src="gwdaudio_min.js"></script>
 </head>
 
 <body class="document-body">
@@ -2209,7 +2321,11 @@
             <gwd-image id="game_tile_15_left_river" source="assets/1.png" scaling="stretch" class="gwd-image-1fw1" data-gwd-name="game_tile_15_left_river"></gwd-image>
           </div>
           <div class="gwd-div-1rdp" id="menu_bar_game">
-            <p class="gwd-p-i5tr" id="game_to_home_button">Back</p>
+            <gwd-audio id="gwd-audio_background" sources="assets/naoMateAMataPart2.mp3" class="gwd-audio-to05" autoplay="" loop="" data-gwd-name="gwd-audio_background" controls=""></gwd-audio>
+            <gwd-image id="SoundButtonUnselected" source="assets/Buttons/SoundButtonUnselected.png" scaling="stretch" class="gwd-image-18n5" data-gwd-name="SoundButtonUnselected"></gwd-image>
+            <gwd-image id="SoundButtonSelected" source="assets/Buttons/SoundButtonSelected.png" scaling="stretch" class="gwd-image-a83x" data-gwd-name="SoundButtonSelected"></gwd-image>
+            <gwd-image id="BackButtonUnselected" source="assets/Buttons/BackButtonUnselected.png" scaling="stretch" class="gwd-image-1c60" data-gwd-name="BackButtonUnselected"></gwd-image>
+            <gwd-image id="BackButtonSelected" source="assets/Buttons/BackButtonSelected.png" scaling="stretch" class="gwd-image-1j5l" data-gwd-name="BackButtonSelected"></gwd-image>
           </div>
           <div class="gwd-div-jme4" id="projecttile_path_div" data-gwd-animation-labels="farmer_start_moving,0;callRandomFarmer,7100;doingNothing,7400">
             <div class="gwd-div-1wqm gwd-gen-197igwdanimation" id="farmer-div" data-gwd-animation-labels="farmer_running,0;farmer_falling_start,2200;farmer_falling_end,3100">
