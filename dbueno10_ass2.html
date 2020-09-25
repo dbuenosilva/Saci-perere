@@ -1854,15 +1854,6 @@
       top: 48.35%;
       visibility: hidden;
     }
-    .gwd-image-18n5 {
-      position: absolute;
-      transform-origin: 50% 50% 0px;
-      top: 8%;
-      width: 3%;
-      height: 79.97%;
-      visibility: visible;
-      left: 95%;
-    }
     .gwd-image-a83x {
       position: absolute;
       width: 3%;
@@ -1945,6 +1936,65 @@
       top: 81px;
       width: 200px;
       visibility: hidden;
+    }
+    .gwd-div-14zg {
+      position: absolute;
+      transform-origin: 50% 50% 0px;
+      width: 16.19%;
+      left: 6.75%;
+      height: 80%;
+      top: 10%;
+      visibility: visible;
+      border-color: transparent;
+      border-image-source: none;
+      border-image-width: 1;
+      border-image-outset: 0;
+      border-image-repeat: stretch;
+    }
+    .gwd-image-11k9 {
+      display: block;
+      position: absolute;
+      transform-origin: 50% 50% 0px;
+      height: 100%;
+      visibility: visible;
+      width: 100.01%;
+      left: -0.005%;
+      top: 0%;
+    }
+    .gwd-div-1jzy {
+      visibility: hidden;
+    }
+    .gwd-img-6p6i {
+      visibility: hidden;
+      width: 100%;
+    }
+    .gwd-image-18n5 {
+      display: block;
+      height: 79.97%;
+      left: 95%;
+      position: absolute;
+      top: 8%;
+      width: 3%;
+      transform-origin: 50% 50% 0px;
+    }
+    .gwd-div-gp2l {
+      position: absolute;
+      transform-origin: 50% 50% 0px;
+      left: 24.08%;
+      top: 24.99%;
+      height: 49.98%;
+      width: 67.6%;
+      background-image: none;
+      background-color: rgb(197, 217, 48);
+      border-style: none;
+      opacity: 1;
+    }
+    .gwd-div-1fb0 {
+      background-color: transparent;
+      visibility: hidden;
+    }
+    .gwd-div-j0do {
+      width: 0%;
     }
     @media (width: 667px) and (height: 375px) {
       .gwd-image-1tan {
@@ -2035,6 +2085,7 @@
     gwd.init = function(event) {
       gwd.glovalVars = gwd.globalVars || {};
       gwd.glovalVars.saciWillyWilly = false;
+      gwd.globalVars.score = 0;
     };
     gwd.saciWillyWillyRunning = function(event) {
       if (!gwd.glovalVars.saciWillyWilly) {
@@ -2066,17 +2117,22 @@
     gwd.evaluateCollisionWithFarmer = function(event) {
       var pathWidth = document.getElementById("game_main_div").offsetWidth;
       var saciWidth = document.getElementById("saci_perere_div").offsetWidth;
+      var max_score = document.getElementById("max_score").offsetWidth;
+      var gained_score = document.getElementById("gained_score").offsetWidth;
+      var widthCurrent = document.getElementById("gained_score").style.width;
       var farmer = document.getElementById("farmer-div");
       const {
         x, y, z
       } = getTranslateValues(farmer);
       var xPositionOftheFarmer = x;
       var distance = pathWidth - (xPositionOftheFarmer * (-1));
-      document.getElementById("posfarmer").textContent = "pathWidth = " + pathWidth + ", saciWidth = " + saciWidth + ", Farmer x: " + xPositionOftheFarmer + " distance: " + distance;
+      document.getElementById("posfarmer").textContent = "pathWidth = " + pathWidth + ", saciWidth = " + saciWidth + ", Farmer x: " + xPositionOftheFarmer + " distance: " + distance + " max_score: " + max_score + " gained_score: " + gained_score + " widthCurrent: " + widthCurrent;
       if (distance >= 0 && distance <= 100) {
         if (!gwd.glovalVars.saciWillyWilly) {
           gwd.actions.timeline.gotoAndPlay("saci_perere_div", "collision-start");
         } else {
+          widthCurrent = Math.trunc((gained_score / max_score) * 100);
+          document.getElementById("gained_score").style.width = (widthCurrent + 1) + "%";
           gwd.actions.timeline.gotoAndPlay("farmer-div", "farmer_falling_start");
         }
       }
@@ -2237,8 +2293,6 @@
       gwd.actions.events.addHandler('farmer-div', 'event-35', gwd.evaluateCollisionWithFarmer, false);
       gwd.actions.events.addHandler('farmer-div', 'event-36', gwd.auto_Farmer_divEvent_36, false);
       gwd.actions.events.addHandler('SoundButtonSelected', 'click', gwd.auto_SoundButtonSelectedClick, false);
-      gwd.actions.events.addHandler('SoundButtonUnselected', 'mouseover', gwd.onMouseOverSoundButton, false);
-      gwd.actions.events.addHandler('SoundButtonUnselected', 'mouseout', gwd.onMouseOutSoundButton, false);
       gwd.actions.events.addHandler('SoundButtonSelected', 'mouseover', gwd.onMouseOverSoundButton, false);
       gwd.actions.events.addHandler('SoundButtonSelected', 'mouseout', gwd.onMouseOutSoundButton, false);
       gwd.actions.events.addHandler('SoundButtonSelected', 'click', gwd.setSoundBgVolume, false);
@@ -2255,6 +2309,8 @@
       gwd.actions.events.addHandler('saci_perere_div', 'saci-step-1-sound', gwd.auto_Saci_perere_divSaci_step_1_sound, false);
       gwd.actions.events.addHandler('saci_perere_div', 'evaluateCollision300', gwd.auto_Saci_perere_divEvaluateCollision300, false);
       gwd.actions.events.addHandler('saci_perere_div', 'event-23', gwd.auto_Saci_perere_divEvent_231, false);
+      gwd.actions.events.addHandler('SoundButtonUnselected', 'mouseover', gwd.onMouseOverSoundButton, false);
+      gwd.actions.events.addHandler('SoundButtonUnselected', 'mouseout', gwd.onMouseOutSoundButton, false);
       gwd.actions.timeline.captureAnimationEnd(document.body);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
@@ -2308,8 +2364,6 @@
       gwd.actions.events.removeHandler('farmer-div', 'event-35', gwd.evaluateCollisionWithFarmer, false);
       gwd.actions.events.removeHandler('farmer-div', 'event-36', gwd.auto_Farmer_divEvent_36, false);
       gwd.actions.events.removeHandler('SoundButtonSelected', 'click', gwd.auto_SoundButtonSelectedClick, false);
-      gwd.actions.events.removeHandler('SoundButtonUnselected', 'mouseover', gwd.onMouseOverSoundButton, false);
-      gwd.actions.events.removeHandler('SoundButtonUnselected', 'mouseout', gwd.onMouseOutSoundButton, false);
       gwd.actions.events.removeHandler('SoundButtonSelected', 'mouseover', gwd.onMouseOverSoundButton, false);
       gwd.actions.events.removeHandler('SoundButtonSelected', 'mouseout', gwd.onMouseOutSoundButton, false);
       gwd.actions.events.removeHandler('SoundButtonSelected', 'click', gwd.setSoundBgVolume, false);
@@ -2326,6 +2380,8 @@
       gwd.actions.events.removeHandler('saci_perere_div', 'saci-step-1-sound', gwd.auto_Saci_perere_divSaci_step_1_sound, false);
       gwd.actions.events.removeHandler('saci_perere_div', 'evaluateCollision300', gwd.auto_Saci_perere_divEvaluateCollision300, false);
       gwd.actions.events.removeHandler('saci_perere_div', 'event-23', gwd.auto_Saci_perere_divEvent_231, false);
+      gwd.actions.events.removeHandler('SoundButtonUnselected', 'mouseover', gwd.onMouseOverSoundButton, false);
+      gwd.actions.events.removeHandler('SoundButtonUnselected', 'mouseout', gwd.onMouseOutSoundButton, false);
       gwd.actions.timeline.releaseAnimationEnd(document.body);
     };
     document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
@@ -2431,6 +2487,11 @@
             <gwd-image id="SoundButtonSelected" source="assets/Buttons/SoundButtonSelected.png" scaling="stretch" class="gwd-image-a83x" data-gwd-name="SoundButtonSelected"></gwd-image>
             <gwd-image id="BackButtonUnselected" source="assets/Buttons/BackButtonUnselected.png" scaling="stretch" class="gwd-image-1c60" data-gwd-name="BackButtonUnselected"></gwd-image>
             <gwd-image id="BackButtonSelected" source="assets/Buttons/BackButtonSelected.png" scaling="stretch" class="gwd-image-1j5l" data-gwd-name="BackButtonSelected"></gwd-image>
+            <div class="gwd-div-14zg" id="score_bar_div">
+              <gwd-image id="score_bar_img" source="assets/scoreBar.png" scaling="stretch" class="gwd-image-11k9" data-gwd-name="score_bar_img" alt="Score"></gwd-image>
+              <div class="gwd-div-gp2l gwd-div-1fb0" id="max_score"></div>
+              <div class="gwd-div-gp2l gwd-div-j0do" id="gained_score"></div>
+            </div>
           </div>
           <div class="gwd-div-jme4" id="projecttile_path_div" data-gwd-animation-labels="farmer_start_moving,0;callRandomFarmer,7100;doingNothing,7400">
             <div class="gwd-div-1wqm gwd-gen-197igwdanimation" id="farmer-div" data-gwd-animation-labels="farmer_running,0;farmer_falling_start,2200;farmer_falling_end,3100">
