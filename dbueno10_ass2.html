@@ -1886,6 +1886,66 @@
       left: 2%;
       visibility: hidden;
     }
+    .gwd-div-uo6z {
+      background-image: none;
+      visibility: visible;
+      opacity: 1;
+      background-color: transparent;
+    }
+    .gwd-audio-1jsv {
+      display: block;
+      height: 140px;
+      left: 19px;
+      position: absolute;
+      top: 268.984px;
+      width: 200px;
+      overflow: hidden;
+    }
+    .gwd-audio-1rpa {
+      width: 200px;
+      height: 140px;
+      position: absolute;
+      left: 62px;
+      top: 55px;
+    }
+    .gwd-audio-1ifp {
+      width: 200px;
+      height: 140px;
+      position: absolute;
+      left: 58px;
+      top: 42px;
+    }
+    .gwd-audio-9mgs {
+      width: 200px;
+      height: 140px;
+      position: absolute;
+      left: 50px;
+      top: 53px;
+    }
+    .gwd-audio-ganw {
+      display: block;
+      height: 140px;
+      left: 2128px;
+      position: absolute;
+      top: 86px;
+      width: 200px;
+      visibility: hidden;
+    }
+    .gwd-div-1jx9 {
+      visibility: visible;
+    }
+    .gwd-audio-11ui {
+      visibility: visible;
+    }
+    .gwd-audio-1ep8 {
+      display: block;
+      height: 140px;
+      left: 67px;
+      position: absolute;
+      top: 81px;
+      width: 200px;
+      visibility: hidden;
+    }
     @media (width: 667px) and (height: 375px) {
       .gwd-image-1tan {
         left: 0px;
@@ -2065,7 +2125,10 @@
       iSelectedSoundButton.style.visibility = "hidden";
     };
     gwd.setSoundBgVolume = function(event) {
-      document.getElementById("gwd-audio_background").volume = 0.05;
+      document.getElementById("gwd-audio_background").volume = 0.01;
+      document.getElementById("saci-willy-willy-sound").volume = 0.1;
+      document.getElementById("saci-step-1").volume = 0.05;
+      document.getElementById("saci-step-2").volume = 0.05;
     };
     gwd.onMouseOverBackButton = function(event) {
       var iUnSelectedBackButton = document.getElementById("BackButtonUnselected");
@@ -2090,6 +2153,34 @@
     gwd.auto_BackButtonSelectedClick = function(event) {
       // GWD Predefined Function
       gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home', 'fade', 1000, 'linear', 'top');
+    };
+    gwd.auto_BackButtonSelectedClick1 = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdAudio.pause('gwd-audio_background');
+    };
+    gwd.auto_SelectedPlayButtonClick1 = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdAudio.play('gwd-audio_background');
+    };
+    gwd.auto_Saci_perere_divCall_bye_bye_saci = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdAudio.play('bye-bye-saci');
+    };
+    gwd.auto_Saci_perere_divEvent_26 = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdAudio.play('saci-willy-willy-sound');
+    };
+    gwd.auto_Saci_perere_divSaci_step_1_sound = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdAudio.play('saci-step-1');
+    };
+    gwd.auto_Saci_perere_divEvaluateCollision300 = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdAudio.play('saci-step-2');
+    };
+    gwd.auto_Saci_perere_divEvent_231 = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdAudio.pause('gwd-audio_background');
     };
   </script>
   <script type="text/javascript" gwd-events="registration">
@@ -2132,7 +2223,7 @@
       gwd.actions.events.addHandler('help_to_home_button', 'click', gwd.auto_Help_to_home_buttonClick, false);
       gwd.actions.events.addHandler('saci_perere_div', 'swap-saci-2-to-1', gwd.auto_Saci_perere_divSwap_saci_2_to_1, false);
       gwd.actions.events.addHandler('projecttile_path_div', 'event-24', gwd.auto_Projecttile_path_divEvent_24, false);
-      gwd.actions.events.addHandler('saci_perere_div', 'event-26', gwd.saciWillyWillyRunning, false);
+      gwd.actions.events.addHandler('saci_perere_div', 'saci-willy-willy-sound', gwd.saciWillyWillyRunning, false);
       gwd.actions.events.addHandler('saci_perere_div', 'evaluateCollision300', gwd.evaluateCollisionWithFarmer, false);
       gwd.actions.events.addHandler('saci_perere_div', 'swap-saci-2-to-1', gwd.evaluateCollisionWithFarmer, false);
       gwd.actions.events.addHandler('farmer-div', 'event-27', gwd.evaluateCollisionWithFarmer, false);
@@ -2157,6 +2248,13 @@
       gwd.actions.events.addHandler('BackButtonSelected', 'mouseover', gwd.onMouseOverBackButton, false);
       gwd.actions.events.addHandler('BackButtonSelected', 'mouseout', gwd.onMouseOutBackButton, false);
       gwd.actions.events.addHandler('BackButtonSelected', 'click', gwd.auto_BackButtonSelectedClick, false);
+      gwd.actions.events.addHandler('BackButtonSelected', 'click', gwd.auto_BackButtonSelectedClick1, false);
+      gwd.actions.events.addHandler('SelectedPlayButton', 'click', gwd.auto_SelectedPlayButtonClick1, false);
+      gwd.actions.events.addHandler('saci_perere_div', 'call-bye-bye-saci', gwd.auto_Saci_perere_divCall_bye_bye_saci, false);
+      gwd.actions.events.addHandler('saci_perere_div', 'saci-willy-willy-sound', gwd.auto_Saci_perere_divEvent_26, false);
+      gwd.actions.events.addHandler('saci_perere_div', 'saci-step-1-sound', gwd.auto_Saci_perere_divSaci_step_1_sound, false);
+      gwd.actions.events.addHandler('saci_perere_div', 'evaluateCollision300', gwd.auto_Saci_perere_divEvaluateCollision300, false);
+      gwd.actions.events.addHandler('saci_perere_div', 'event-23', gwd.auto_Saci_perere_divEvent_231, false);
       gwd.actions.timeline.captureAnimationEnd(document.body);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
@@ -2196,7 +2294,7 @@
       gwd.actions.events.removeHandler('help_to_home_button', 'click', gwd.auto_Help_to_home_buttonClick, false);
       gwd.actions.events.removeHandler('saci_perere_div', 'swap-saci-2-to-1', gwd.auto_Saci_perere_divSwap_saci_2_to_1, false);
       gwd.actions.events.removeHandler('projecttile_path_div', 'event-24', gwd.auto_Projecttile_path_divEvent_24, false);
-      gwd.actions.events.removeHandler('saci_perere_div', 'event-26', gwd.saciWillyWillyRunning, false);
+      gwd.actions.events.removeHandler('saci_perere_div', 'saci-willy-willy-sound', gwd.saciWillyWillyRunning, false);
       gwd.actions.events.removeHandler('saci_perere_div', 'evaluateCollision300', gwd.evaluateCollisionWithFarmer, false);
       gwd.actions.events.removeHandler('saci_perere_div', 'swap-saci-2-to-1', gwd.evaluateCollisionWithFarmer, false);
       gwd.actions.events.removeHandler('farmer-div', 'event-27', gwd.evaluateCollisionWithFarmer, false);
@@ -2221,6 +2319,13 @@
       gwd.actions.events.removeHandler('BackButtonSelected', 'mouseover', gwd.onMouseOverBackButton, false);
       gwd.actions.events.removeHandler('BackButtonSelected', 'mouseout', gwd.onMouseOutBackButton, false);
       gwd.actions.events.removeHandler('BackButtonSelected', 'click', gwd.auto_BackButtonSelectedClick, false);
+      gwd.actions.events.removeHandler('BackButtonSelected', 'click', gwd.auto_BackButtonSelectedClick1, false);
+      gwd.actions.events.removeHandler('SelectedPlayButton', 'click', gwd.auto_SelectedPlayButtonClick1, false);
+      gwd.actions.events.removeHandler('saci_perere_div', 'call-bye-bye-saci', gwd.auto_Saci_perere_divCall_bye_bye_saci, false);
+      gwd.actions.events.removeHandler('saci_perere_div', 'saci-willy-willy-sound', gwd.auto_Saci_perere_divEvent_26, false);
+      gwd.actions.events.removeHandler('saci_perere_div', 'saci-step-1-sound', gwd.auto_Saci_perere_divSaci_step_1_sound, false);
+      gwd.actions.events.removeHandler('saci_perere_div', 'evaluateCollision300', gwd.auto_Saci_perere_divEvaluateCollision300, false);
+      gwd.actions.events.removeHandler('saci_perere_div', 'event-23', gwd.auto_Saci_perere_divEvent_231, false);
       gwd.actions.timeline.releaseAnimationEnd(document.body);
     };
     document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
@@ -2320,8 +2425,8 @@
             <gwd-image id="game_tile_13_left_river" source="assets/3.png" scaling="stretch" class="gwd-image-8e66" data-gwd-name="game_tile_13_left_river"></gwd-image>
             <gwd-image id="game_tile_15_left_river" source="assets/1.png" scaling="stretch" class="gwd-image-1fw1" data-gwd-name="game_tile_15_left_river"></gwd-image>
           </div>
-          <div class="gwd-div-1rdp" id="menu_bar_game">
-            <gwd-audio id="gwd-audio_background" sources="assets/naoMateAMataPart2.mp3" class="gwd-audio-to05" autoplay="" loop="" data-gwd-name="gwd-audio_background" controls=""></gwd-audio>
+          <div class="gwd-div-1rdp gwd-div-uo6z" id="menu_bar_game">
+            <gwd-audio id="gwd-audio_background" sources="assets/naoMateAMataPart2.mp3" class="gwd-audio-to05" loop="" data-gwd-name="gwd-audio_background" controls=""></gwd-audio>
             <gwd-image id="SoundButtonUnselected" source="assets/Buttons/SoundButtonUnselected.png" scaling="stretch" class="gwd-image-18n5" data-gwd-name="SoundButtonUnselected"></gwd-image>
             <gwd-image id="SoundButtonSelected" source="assets/Buttons/SoundButtonSelected.png" scaling="stretch" class="gwd-image-a83x" data-gwd-name="SoundButtonSelected"></gwd-image>
             <gwd-image id="BackButtonUnselected" source="assets/Buttons/BackButtonUnselected.png" scaling="stretch" class="gwd-image-1c60" data-gwd-name="BackButtonUnselected"></gwd-image>
@@ -2329,6 +2434,8 @@
           </div>
           <div class="gwd-div-jme4" id="projecttile_path_div" data-gwd-animation-labels="farmer_start_moving,0;callRandomFarmer,7100;doingNothing,7400">
             <div class="gwd-div-1wqm gwd-gen-197igwdanimation" id="farmer-div" data-gwd-animation-labels="farmer_running,0;farmer_falling_start,2200;farmer_falling_end,3100">
+              <gwd-audio id="farmer_step2" sources="assets/sounds/farmer_step2.mp3" class="gwd-audio-1ep8"></gwd-audio>
+              <gwd-audio id="farmer_step1" sources="assets/sounds/farmer_step1.mp3" class="gwd-audio-ganw"></gwd-audio>
               <gwd-image id="run_9_farmer" source="assets/Run_9_farmer.png" scaling="stretch" class="gwd-image-17kq gwd-gen-9l05gwdanimation" data-gwd-name="run_9_farmer"></gwd-image>
               <gwd-image id="run_8_farmer" source="assets/Run_8_farmer.png" scaling="stretch" class="gwd-image-5h6c gwd-gen-156hgwdanimation" data-gwd-name="run_8_farmer"></gwd-image>
               <gwd-image id="run_7_farmer" source="assets/Run_7_farmer.png" scaling="stretch" class="gwd-image-yi85 gwd-gen-j37wgwdanimation" data-gwd-name="run_7_farmer"></gwd-image>
@@ -2359,12 +2466,14 @@
               <div class="gwd-animation-event event-34-animation" data-event-name="event-34" data-event-time="1600"></div>
               <div class="gwd-animation-event event-35-animation" data-event-name="event-35" data-event-time="1800"></div>
               <div class="gwd-animation-event event-36-animation" data-event-name="event-36" data-event-time="3100"></div>
+              <div class="gwd-animation-event farmer-step-sound-animation" data-event-name="farmer-step-sound" data-event-time="0.1"></div>
             </div>
             <div class="gwd-animation-event event-21-animation" data-event-name="event-21" data-event-time="7100"></div>
             <div class="gwd-animation-event event-24-animation" data-event-name="event-24" data-event-time="10300"></div>
           </div>
           <div class="gwd-div-1223" id="saci_perere_div" data-gwd-animation-labels="walking_start,0;willy-willy-start,700;collision-start,2200;collision-end,5200">
-            <gwd-image id="saci_onelegged_walking_2" source="assets/saci_onelegged_walking_2.png" scaling="stretch" class="gwd-image-1eh6 gwd-gen-142wgwdanimation" data-gwd-name="saci_onelegged_walking_2"></gwd-image>
+            <gwd-audio id="bye-bye-saci" sources="assets/saci-morri.mp3" class="gwd-audio-1jsv" data-gwd-name="bye-bye-saci"></gwd-audio>
+            <gwd-audio id="saci-willy-willy-sound" sources="assets/saci-willy-willy.mp3" class="gwd-audio-1rpa" data-gwd-name="saci-willy-willy-sound"></gwd-audio>
             <gwd-image id="saci_onelegged_walking_1" source="assets/saci_onelegged_walking_1.png" scaling="stretch" class="gwd-image-1gk6 gwd-gen-1860gwdanimation" data-gwd-name="saci_onelegged_walking_1"></gwd-image>
             <gwd-image id="saci-willy-willy" source="assets/Saci-willy-willy.png" scaling="stretch" class="gwd-image-1uik gwd-gen-15h0gwdanimation" data-gwd-name="saci-willy-willy"></gwd-image>
             <div class="gwd-animation-event swap-saci-2-to-1-animation" data-event-name="swap-saci-2-to-1" data-event-time="600"></div>
@@ -2373,8 +2482,13 @@
             <gwd-image id="bottle" source="assets/bottle.png" scaling="stretch" class="gwd-image-kc8p gwd-gen-s14jgwdanimation" data-gwd-name="bottle"></gwd-image>
             <gwd-image id="saci_onelegged_dead" source="assets/saci_onelegged_dead.png" scaling="stretch" class="gwd-image-oo44 gwd-gen-wfkjgwdanimation"></gwd-image>
             <div class="gwd-animation-event event-23-animation" data-event-name="event-23" data-event-time="5200"></div>
-            <div class="gwd-animation-event event-26-animation" data-event-name="event-26" data-event-time="800"></div>
             <div class="gwd-animation-event evaluateCollision300-animation" data-event-name="evaluateCollision300" data-event-time="300"></div>
+            <gwd-image id="saci_onelegged_walking_2" source="assets/saci_onelegged_walking_2.png" scaling="stretch" class="gwd-image-1eh6 gwd-gen-142wgwdanimation" data-gwd-name="saci_onelegged_walking_2"></gwd-image>
+            <div class="gwd-animation-event call-bye-bye-saci-animation" data-event-name="call-bye-bye-saci" data-event-time="2300"></div>
+            <div class="gwd-animation-event saci-willy-willy-sound-animation" data-event-name="saci-willy-willy-sound" data-event-time="800"></div>
+            <gwd-audio id="saci-step-1" sources="assets/sounds/saci-step-1.mp3" class="gwd-audio-1ifp" data-gwd-name="saci-step-1"></gwd-audio>
+            <gwd-audio id="saci-step-2" sources="assets/sounds/saci-step-2.mp3" class="gwd-audio-9mgs" data-gwd-name="saci-step-2"></gwd-audio>
+            <div class="gwd-animation-event saci-step-1-sound-animation" data-event-name="saci-step-1-sound" data-event-time="0.1"></div>
           </div>
           <div class="gwd-animation-event event-1-animation" data-event-name="event-1" data-event-time="7700"></div>
           <gwd-taparea id="gwd-williy-willy-tap" class="gwd-taparea-li44 gwd-taparea-1vva" data-gwd-name="gwd-williy-willy-tap"></gwd-taparea>
