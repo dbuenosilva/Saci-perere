@@ -2790,7 +2790,7 @@
         animation-timing-function: linear;
       }
     }
-    .gwd-play-animation #sucuri_div .gwd-gen-1cz0gwdanimation {
+    .gwd-play-animation #sucuri-div .gwd-gen-1cz0gwdanimation {
       animation: 13.8s linear 0s 1 normal forwards running gwd-gen-1cz0gwdanimation_gwd-keyframes;
     }
     .gwd-div-2tdx {
@@ -3975,30 +3975,50 @@
       // GWD Predefined Function
       gwd.actions.timeline.gotoAndPlay('saci_perere_div', 'walking_start');
     };
-    gwd.evaluateCollisionWithFarmer = function(event) {
+    gwd.evaluateCollision = function(event) {
+      const SAFE_DISTANCE = 100;
       var pathWidth = document.getElementById("game_main_div").offsetWidth;
+      var saciTop = document.getElementById("saci_onelegged_walking_2").offsetTop * (-1);
       var saciWidth = document.getElementById("saci_perere_div").offsetWidth;
-      var max_score = document.getElementById("max_score").offsetWidth;
-      var gained_score = document.getElementById("gained_score").offsetWidth;
-      var widthCurrent = document.getElementById("gained_score").style.width;
-      var farmer = document.getElementById("farmer-div");
-      const {
-        x, y, z
-      } = getTranslateValues(farmer);
-      var xPositionOftheFarmer = x;
-      var distance = pathWidth - (xPositionOftheFarmer * (-1));
-      document.getElementById("messages").textContent = "pathWidth = " + pathWidth + ", saciWidth = " + saciWidth + ", Farmer x: " + xPositionOftheFarmer + " distance: " + distance + " max_score: " + max_score + " gained_score: " + gained_score + " widthCurrent: " + widthCurrent;
-      if (distance >= 0 && distance <= 100) {
-        if (!gwd.glovalVars.saciWillyWilly) {
-          gwd.actions.timeline.gotoAndPlay("saci_perere_div", "collision-start");
-        } else {
-          widthCurrent = Math.trunc((gained_score / max_score) * 100);
-          if ((widthCurrent + 1) < 68) { // 68 is the max % of this div
-            document.getElementById("gained_score").style.width = (widthCurrent + 1) + "%";
-          } else {
-            alert("Congratulations! You win the game. Keep saving the Amazon!");
-          }
+      var xPositionOftheFarmer = getXaxisPosition(document.getElementById("farmer-div"));
+      var xPositionOftheOnca = getXaxisPosition(document.getElementById("onca-div"));
+      var xPositionOftheSucuri = document.getElementById("sucuri-div").offsetLeft;
+      var xDistanceFromFarmer = pathWidth - (xPositionOftheFarmer * (-1));
+      var xDistanceFromOnca = pathWidth - (xPositionOftheOnca * (-1));
+      var xDistanceFromSucuri = (xPositionOftheSucuri / 20) - 35;
+      document.getElementById("messages").textContent = " " + " saci_perere_divTop = " + saciTop + " xDistanceFromFarmer = " + xDistanceFromFarmer + " xDistanceFromOnca: " + xDistanceFromOnca + " xDistanceFromSucuri: " + xDistanceFromSucuri;
+      var meetFarmer = (xDistanceFromFarmer >= 0 && xDistanceFromFarmer <= SAFE_DISTANCE);
+      var meetOnca = (xDistanceFromOnca >= 0 && xDistanceFromOnca <= SAFE_DISTANCE);
+      var meetSucuri = (xDistanceFromSucuri >= 95 && xDistanceFromSucuri <= SAFE_DISTANCE);
+      var saciIsSafe = (saciTop >= SAFE_DISTANCE);
+      if (meetFarmer || meetOnca || meetSucuri) {
+        if (saciIsSafe) {
+          addScore(1);
+        } else if (meetFarmer && (gwd.glovalVars.saciWillyWilly)) {
           gwd.actions.timeline.gotoAndPlay("farmer-div", "farmer_falling_start");
+          addScore(10);
+        } else {
+          gwd.actions.timeline.gotoAndPlay("saci_perere_div", "collision-start");
+        }
+        if (document.getElementById("gained_score").style.width >= 68) {
+          alert("Congratulations! You win the game. Keep saving the Amazon!");
+        }
+      }
+
+      function getXaxisPosition(objPositions) {
+        const {
+          x, y, z
+        } = getTranslateValues(objPositions);
+        return (x);
+      }
+
+      function addScore(scoreGained) {
+        var max_score = document.getElementById("max_score").offsetWidth;
+        var gained_score = document.getElementById("gained_score").offsetWidth;
+        var widthCurrent = document.getElementById("gained_score").style.width;
+        widthCurrent = Math.trunc((gained_score / max_score) * 100);
+        if ((widthCurrent + 1) < 68) { // 68 is the max % of this div
+          document.getElementById("gained_score").style.width = (widthCurrent + scoreGained) + "%";
         }
       }
     };
@@ -4156,7 +4176,7 @@
       gwd.actions.gwdAudio.play('onca_roar_sound');
     };
     gwd.birdsComingRandomly = function(event) {
-      var rand = Math.random() * 3;
+      var rand = Math.random() * 5;
       if (rand < 1) {
         gwd.actions.timeline.gotoAndPlay("birds_path_div", "arara_start_moving");
       } else {
@@ -4189,7 +4209,7 @@
     };
     gwd.auto_Projecttile_path_divEvent_33 = function(event) {
       // GWD Predefined Function
-      gwd.actions.timeline.gotoAndPlay('sucuri_div', 'sucuri_appear');
+      gwd.actions.timeline.gotoAndPlay('sucuri-div', 'sucuri_appear');
     };
     gwd.auto_Projecttile_path_divCallFarmerRandomlyAfterSucuri = function(event) {
       // GWD Predefined Function
@@ -4260,11 +4280,11 @@
       gwd.actions.events.addHandler('help_to_home_button', 'click', gwd.auto_Help_to_home_buttonClick, false);
       gwd.actions.events.addHandler('saci_perere_div', 'swap-saci-2-to-1', gwd.auto_Saci_perere_divSwap_saci_2_to_1, false);
       gwd.actions.events.addHandler('saci_perere_div', 'saci-willy-willy-sound', gwd.saciWillyWillyRunning, false);
-      gwd.actions.events.addHandler('saci_perere_div', 'evaluateCollision300', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.addHandler('saci_perere_div', 'swap-saci-2-to-1', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.addHandler('farmer-div', 'event-27', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.addHandler('farmer-div', 'event-28', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.addHandler('farmer-div', 'event-35', gwd.evaluateCollisionWithFarmer, false);
+      gwd.actions.events.addHandler('saci_perere_div', 'evaluateCollision300', gwd.evaluateCollision, false);
+      gwd.actions.events.addHandler('saci_perere_div', 'swap-saci-2-to-1', gwd.evaluateCollision, false);
+      gwd.actions.events.addHandler('farmer-div', 'event-27', gwd.evaluateCollision, false);
+      gwd.actions.events.addHandler('farmer-div', 'event-28', gwd.evaluateCollision, false);
+      gwd.actions.events.addHandler('farmer-div', 'event-35', gwd.evaluateCollision, false);
       gwd.actions.events.addHandler('SoundButtonSelected', 'click', gwd.auto_SoundButtonSelectedClick, false);
       gwd.actions.events.addHandler('SoundButtonSelected', 'mouseover', gwd.onMouseOverSoundButton, false);
       gwd.actions.events.addHandler('SoundButtonSelected', 'mouseout', gwd.onMouseOutSoundButton, false);
@@ -4292,13 +4312,13 @@
       gwd.actions.events.addHandler('projecttile_path_div', 'sth_coming_randomly_after_farmer', gwd.farmerComingRandomly, false);
       gwd.actions.events.addHandler('projecttile_path_div', 'doingnothing-end', gwd.auto_Projecttile_path_divDoingnothing_end, false);
       gwd.actions.events.addHandler('farmer-div', 'loop_farmer', gwd.auto_Farmer_divLoop_farmer, false);
-      gwd.actions.events.addHandler('farmer-div', 'evaluate_collison_0200', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.addHandler('farmer-div', 'evaluate_collision_0800', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.addHandler('farmer-div', 'evaluate_collision_1400', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.addHandler('farmer-div', 'event-24', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.addHandler('farmer-div', 'event-25', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.addHandler('farmer-div', 'evaluate_collision_0800', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.addHandler('farmer-div', 'event-26', gwd.evaluateCollisionWithFarmer, false);
+      gwd.actions.events.addHandler('farmer-div', 'evaluate_collison_0200', gwd.evaluateCollision, false);
+      gwd.actions.events.addHandler('farmer-div', 'evaluate_collision_0800', gwd.evaluateCollision, false);
+      gwd.actions.events.addHandler('farmer-div', 'evaluate_collision_1400', gwd.evaluateCollision, false);
+      gwd.actions.events.addHandler('farmer-div', 'event-24', gwd.evaluateCollision, false);
+      gwd.actions.events.addHandler('farmer-div', 'event-25', gwd.evaluateCollision, false);
+      gwd.actions.events.addHandler('farmer-div', 'evaluate_collision_0800', gwd.evaluateCollision, false);
+      gwd.actions.events.addHandler('farmer-div', 'event-26', gwd.evaluateCollision, false);
       gwd.actions.events.addHandler('farmer-div', 'farmer_loop_after_falen', gwd.auto_Farmer_divFarmer_loop_after_falen, false);
       gwd.actions.events.addHandler('onca-div', 'onca-start-running', gwd.auto_Onca_divOnca_start_running, false);
       gwd.actions.events.addHandler('onca-div', 'onca_doing_nothing_loop', gwd.auto_Onca_divOnca_doing_nothing_loop, false);
@@ -4355,11 +4375,11 @@
       gwd.actions.events.removeHandler('help_to_home_button', 'click', gwd.auto_Help_to_home_buttonClick, false);
       gwd.actions.events.removeHandler('saci_perere_div', 'swap-saci-2-to-1', gwd.auto_Saci_perere_divSwap_saci_2_to_1, false);
       gwd.actions.events.removeHandler('saci_perere_div', 'saci-willy-willy-sound', gwd.saciWillyWillyRunning, false);
-      gwd.actions.events.removeHandler('saci_perere_div', 'evaluateCollision300', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.removeHandler('saci_perere_div', 'swap-saci-2-to-1', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.removeHandler('farmer-div', 'event-27', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.removeHandler('farmer-div', 'event-28', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.removeHandler('farmer-div', 'event-35', gwd.evaluateCollisionWithFarmer, false);
+      gwd.actions.events.removeHandler('saci_perere_div', 'evaluateCollision300', gwd.evaluateCollision, false);
+      gwd.actions.events.removeHandler('saci_perere_div', 'swap-saci-2-to-1', gwd.evaluateCollision, false);
+      gwd.actions.events.removeHandler('farmer-div', 'event-27', gwd.evaluateCollision, false);
+      gwd.actions.events.removeHandler('farmer-div', 'event-28', gwd.evaluateCollision, false);
+      gwd.actions.events.removeHandler('farmer-div', 'event-35', gwd.evaluateCollision, false);
       gwd.actions.events.removeHandler('SoundButtonSelected', 'click', gwd.auto_SoundButtonSelectedClick, false);
       gwd.actions.events.removeHandler('SoundButtonSelected', 'mouseover', gwd.onMouseOverSoundButton, false);
       gwd.actions.events.removeHandler('SoundButtonSelected', 'mouseout', gwd.onMouseOutSoundButton, false);
@@ -4387,13 +4407,13 @@
       gwd.actions.events.removeHandler('projecttile_path_div', 'sth_coming_randomly_after_farmer', gwd.farmerComingRandomly, false);
       gwd.actions.events.removeHandler('projecttile_path_div', 'doingnothing-end', gwd.auto_Projecttile_path_divDoingnothing_end, false);
       gwd.actions.events.removeHandler('farmer-div', 'loop_farmer', gwd.auto_Farmer_divLoop_farmer, false);
-      gwd.actions.events.removeHandler('farmer-div', 'evaluate_collison_0200', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.removeHandler('farmer-div', 'evaluate_collision_0800', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.removeHandler('farmer-div', 'evaluate_collision_1400', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.removeHandler('farmer-div', 'event-24', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.removeHandler('farmer-div', 'event-25', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.removeHandler('farmer-div', 'evaluate_collision_0800', gwd.evaluateCollisionWithFarmer, false);
-      gwd.actions.events.removeHandler('farmer-div', 'event-26', gwd.evaluateCollisionWithFarmer, false);
+      gwd.actions.events.removeHandler('farmer-div', 'evaluate_collison_0200', gwd.evaluateCollision, false);
+      gwd.actions.events.removeHandler('farmer-div', 'evaluate_collision_0800', gwd.evaluateCollision, false);
+      gwd.actions.events.removeHandler('farmer-div', 'evaluate_collision_1400', gwd.evaluateCollision, false);
+      gwd.actions.events.removeHandler('farmer-div', 'event-24', gwd.evaluateCollision, false);
+      gwd.actions.events.removeHandler('farmer-div', 'event-25', gwd.evaluateCollision, false);
+      gwd.actions.events.removeHandler('farmer-div', 'evaluate_collision_0800', gwd.evaluateCollision, false);
+      gwd.actions.events.removeHandler('farmer-div', 'event-26', gwd.evaluateCollision, false);
       gwd.actions.events.removeHandler('farmer-div', 'farmer_loop_after_falen', gwd.auto_Farmer_divFarmer_loop_after_falen, false);
       gwd.actions.events.removeHandler('onca-div', 'onca-start-running', gwd.auto_Onca_divOnca_start_running, false);
       gwd.actions.events.removeHandler('onca-div', 'onca_doing_nothing_loop', gwd.auto_Onca_divOnca_doing_nothing_loop, false);
@@ -4583,7 +4603,7 @@
             <div class="gwd-animation-event doingnothing-end-animation" data-event-name="doingnothing-end" data-event-time="8100"></div>
             <div class="gwd-animation-event sth_coming_randomly_after_farmer-animation" data-event-name="sth_coming_randomly_after_farmer" data-event-time="7100"></div>
             <div class="gwd-animation-event onca_start_moving-animation" data-event-name="onca_start_moving" data-event-time="8200"></div>
-            <div class="gwd-div-ox1d gwd-gen-utbkgwdanimation" id="sucuri_div" data-gwd-animation-labels="sucuri_appear,1800;sucuri_disappear,13100">
+            <div class="gwd-div-ox1d gwd-gen-utbkgwdanimation" id="sucuri-div" data-gwd-animation-labels="sucuri_appear,1800;sucuri_disappear,13100">
               <gwd-image id="sucuri" source="assets/sucuri/sucuri.png" scaling="stretch" class="gwd-image-1ilo gwd-gen-1cz0gwdanimation" data-gwd-name="sucuri"></gwd-image>
             </div>
             <div class="gwd-animation-event sth_coming_randomly_after_onca-animation" data-event-name="sth_coming_randomly_after_onca" data-event-time="12800"></div>
