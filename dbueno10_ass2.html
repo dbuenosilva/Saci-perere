@@ -12,6 +12,9 @@
   <link href="gwdimage_style.css" rel="stylesheet" data-version="15" data-exports-type="gwd-image">
   <link href="gwdaudio_style.css" rel="stylesheet" data-version="6" data-exports-type="gwd-audio">
   <link href="gwdtaparea_style.css" rel="stylesheet" data-version="7" data-exports-type="gwd-taparea">
+  <link href="gwdgesture_style.css" rel="stylesheet" data-version="7" data-exports-type="gwd-gesture">
+  <link href="gwdgallerynavigation_style.css" rel="stylesheet" data-version="6" data-exports-type="gwd-gallerynavigation">
+  <link href="gwdcarouselgallery_style.css" rel="stylesheet" data-version="23" data-exports-type="gwd-carouselgallery">
   <style type="text/css" id="gwd-text-style">
     p {
       margin: 0px;
@@ -191,15 +194,6 @@
       top: 0%;
       width: 100%;
       height: 6.67%;
-    }
-    .gwd-p-i5tr {
-      color: rgb(248, 248, 248);
-      position: absolute;
-      transform-origin: 50% 50% 0px;
-      left: 2.25%;
-      top: 0%;
-      width: 6.75%;
-      height: 88%;
     }
     .gwd-div-1223 {
       position: absolute;
@@ -1117,15 +1111,6 @@
     }
     .gwd-img-gcjt {
       visibility: hidden;
-    }
-    .gwd-span-1kql {
-      display: block;
-      height: 140px;
-      left: 120px;
-      position: absolute;
-      top: 59px;
-      width: 523px;
-      transform-origin: 50% 50% 0px;
     }
     @keyframes gwd-gen-142wgwdanimation_gwd-keyframes {
       0% {
@@ -3915,14 +3900,27 @@
       width: 100%;
       height: 93%;
     }
-    .gwd-image-1b89 {
-      display: block;
+    .gwd-div-yxp2 {
+      top: -0.27%;
+    }
+    .gwd-image-1hyk {
       position: absolute;
       transform-origin: 50% 50% 0px;
-      left: 17.84%;
-      top: 7.42%;
-      width: 64.32%;
-      height: 85.16%;
+      width: 54.87%;
+      height: 72.54%;
+      left: 22.57%;
+      top: -0.06%;
+    }
+    .gwd-carouselgallery-106b {
+      position: absolute;
+      transform-origin: 50% 50% 0px;
+      width: 100%;
+      height: 100%;
+      left: 0%;
+      top: 0%;
+    }
+    .gwd-div-8c2q {
+      height: 93%;
     }
     @media (width: 667px) and (height: 375px) {
       .gwd-image-1tan {
@@ -4066,14 +4064,11 @@
           gwd.globalVars.score++;
           addScoreToBar(gwd.globalVars.score);
         } else if (meetFarmer && (gwd.globalVars.saciWillyWilly)) {
-          gwd.actions.timeline.gotoAndPlay("farmer-div", "farmer_falling_start");
           gwd.globalVars.score += 10;
           addScoreToBar(gwd.globalVars.score);
+          gwd.actions.timeline.gotoAndPlay("farmer-div", "farmer_falling_start");
         } else {
           gwd.actions.timeline.gotoAndPlay("saci_perere_div", "collision-start");
-        }
-        if (document.getElementById("gained_score").style.width >= 68) {
-          alert("Congratulations! You win the game. Keep saving the Amazon!");
         }
       }
 
@@ -4124,6 +4119,7 @@
           document.getElementById("gained_score").style.width = gwd.globalVars.score + "%";
         } else {
           document.getElementById("gained_score").style.width = "68%";
+          alert("Congratulations! You win the game. Keep saving the Amazon!");
         }
         document.getElementById("score").textContent = gwd.globalVars.score;
       }
@@ -4146,10 +4142,6 @@
     gwd.auto_SelectedCreditsButtonClick = function(event) {
       // GWD Predefined Function
       gwd.actions.gwdPagedeck.goToPage('pagedeck', 'Credits', 'fade', 1000, 'linear', 'top');
-    };
-    gwd.auto_Help_to_home_buttonClick = function(event) {
-      // GWD Predefined Function
-      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home', 'fade', 750, 'linear', 'left');
     };
     gwd.auto_Saci_perere_divSwap_saci_2_to_1 = function(event) {
       // GWD Predefined Function
@@ -4176,18 +4168,10 @@
     gwd.onMouseOverBackButton = function(event) {
       document.getElementById("BackButtonUnselected").style.visibility = "hidden";
       document.getElementById("BackButtonSelected").style.visibility = "visible";
-      document.getElementById("BackButtonCreditPageUnselected").style.visibility = "hidden";
-      document.getElementById("BackButtonCreditPageSelected").style.visibility = "visible";
-      document.getElementById("BackButtonHelpPageUnselected").style.visibility = "hidden";
-      document.getElementById("BackButtonHelpPageSelected").style.visibility = "visible";
     };
     gwd.onMouseOutBackButton = function(event) {
       document.getElementById("BackButtonUnselected").style.visibility = "visible";
       document.getElementById("BackButtonSelected").style.visibility = "hidden";
-      document.getElementById("BackButtonCreditPageUnselected").style.visibility = "visible";
-      document.getElementById("BackButtonCreditPageSelected").style.visibility = "hidden";
-      document.getElementById("BackButtonHelpPageUnselected").style.visibility = "visible";
-      document.getElementById("BackButtonHelpPageSelected").style.visibility = "hidden";
     };
     gwd.auto_SoundButtonSelectedClick = function(event) {
       // GWD Predefined Function
@@ -4373,11 +4357,69 @@
       // GWD Predefined Function
       gwd.actions.gwdPagedeck.goToPage('pagedeck', 'Help', 'none', 1000, 'linear', 'top');
     };
-    gwd.auto_BackButtonSelected_1Click = function(event) {
+    gwd.auto_BackButtonCreditPageUnselectedMouseenter = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdAudio.play('mouse_get_in_buttons');
+    };
+    gwd.auto_BackButtonUnselectedMouseenter = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdAudio.play('mouse_get_in_buttons');
+    };
+    gwd.auto_SoundButtonUnselectedMouseenter = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdAudio.play('mouse_get_in_buttons');
+    };
+    gwd.auto_BackButtonCreditPageUnselected_1Mouseenter = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdAudio.play('mouse_get_in_buttons');
+    };
+    gwd.auto_BackButtonHelpPageSelectedClick = function(event) {
       // GWD Predefined Function
       gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home', 'fade', 1000, 'linear', 'top');
     };
+    gwd.onMouseOutBackButtonHelpPage = function(event) {
+      document.getElementById("BackButtonHelpPageUnselected").style.visibility = "visible";
+      document.getElementById("BackButtonHelpPageSelected").style.visibility = "hidden";
+    };
+    gwd.onMouseOverBackButtonHelpPage = function(event) {
+      document.getElementById("BackButtonHelpPageUnselected").style.visibility = "hidden";
+      document.getElementById("BackButtonHelpPageSelected").style.visibility = "visible";
+    };
+    gwd.onMouseOverBackButtonCreditPage = function(event) {
+      document.getElementById("BackButtonCreditPageUnselected").style.visibility = "hidden";
+      document.getElementById("BackButtonCreditPageSelected").style.visibility = "visible";
+    };
+    gwd.onMouseOutBackButtonCreditPage = function(event) {
+      document.getElementById("BackButtonCreditPageUnselected").style.visibility = "visible";
+      document.getElementById("BackButtonCreditPageSelected").style.visibility = "hidden";
+    };
+    gwd.enterFullScreenMode = function(event) {
+      var elem = document.body;
+      if (elem.mozRequestFullScreen) { /* Firefox */
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE/Edge */
+        elem.msRequestFullscreen();
+      }
+    };
     gwd.auto_BackButtonCreditPageSelectedClick = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home', 'fade', 1000, 'linear', 'top');
+    };
+    gwd.auto_UnSelectedCreditsButtonTouchenter = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'Credits', 'fade', 1000, 'linear', 'top');
+    };
+    gwd.auto_UnSelectedPlayButtonTouchenter = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home_1', 'none', 1000, 'linear', 'top');
+    };
+    gwd.auto_BackButtonHelpPageUnselectedTouchenter = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home', 'fade', 1000, 'linear', 'top');
+    };
+    gwd.auto_BackButtonCreditPageUnselectedTouchenter = function(event) {
       // GWD Predefined Function
       gwd.actions.gwdPagedeck.goToPage('pagedeck', 'home', 'fade', 1000, 'linear', 'top');
     };
@@ -4413,7 +4455,6 @@
       gwd.actions.events.addHandler('SelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
       gwd.actions.events.addHandler('SelectedHelpButton', 'click', gwd.auto_SelectedHelpButtonClick, false);
       gwd.actions.events.addHandler('SelectedCreditsButton', 'click', gwd.auto_SelectedCreditsButtonClick, false);
-      gwd.actions.events.addHandler('help_to_home_button', 'click', gwd.auto_Help_to_home_buttonClick, false);
       gwd.actions.events.addHandler('saci_perere_div', 'swap-saci-2-to-1', gwd.auto_Saci_perere_divSwap_saci_2_to_1, false);
       gwd.actions.events.addHandler('saci_perere_div', 'saci-willy-willy-sound', gwd.saciWillyWillyRunning, false);
       gwd.actions.events.addHandler('saci_perere_div', 'evaluateCollision300', gwd.evaluateCollision, false);
@@ -4481,16 +4522,26 @@
       gwd.actions.events.addHandler('willy-willy-taparea', 'touchstart', gwd.auto_Willy_willy_tapareaAction, false);
       gwd.actions.events.addHandler('jump-taparea', 'touchstart', gwd.auto_Jump_tapareaTouchstart, false);
       gwd.actions.events.addHandler('UnSelectedHelpButton', 'touchstart', gwd.auto_UnSelectedHelpButtonTouchstart, false);
-      gwd.actions.events.addHandler('BackButtonCreditPageUnselected', 'mouseover', gwd.onMouseOverBackButton, false);
-      gwd.actions.events.addHandler('BackButtonCreditPageUnselected', 'mouseout', gwd.onMouseOutBackButton, false);
-      gwd.actions.events.addHandler('BackButtonCreditPageSelected', 'mouseover', gwd.onMouseOverBackButton, false);
-      gwd.actions.events.addHandler('BackButtonCreditPageSelected', 'mouseout', gwd.onMouseOutBackButton, false);
-      gwd.actions.events.addHandler('BackButtonCreditPageSelected', 'click', gwd.auto_BackButtonSelected_1Click, false);
+      gwd.actions.events.addHandler('BackButtonCreditPageUnselected', 'mouseenter', gwd.auto_BackButtonCreditPageUnselectedMouseenter, false);
+      gwd.actions.events.addHandler('BackButtonUnselected', 'mouseenter', gwd.auto_BackButtonUnselectedMouseenter, false);
+      gwd.actions.events.addHandler('SoundButtonUnselected', 'mouseenter', gwd.auto_SoundButtonUnselectedMouseenter, false);
+      gwd.actions.events.addHandler('BackButtonHelpPageUnselected', 'mouseenter', gwd.auto_BackButtonCreditPageUnselected_1Mouseenter, false);
+      gwd.actions.events.addHandler('BackButtonHelpPageSelected', 'mouseover', gwd.onMouseOverBackButtonHelpPage, false);
+      gwd.actions.events.addHandler('BackButtonHelpPageSelected', 'mouseout', gwd.onMouseOutBackButtonHelpPage, false);
+      gwd.actions.events.addHandler('BackButtonHelpPageUnselected', 'mouseover', gwd.onMouseOverBackButtonHelpPage, false);
+      gwd.actions.events.addHandler('BackButtonHelpPageUnselected', 'mouseout', gwd.onMouseOutBackButtonHelpPage, false);
+      gwd.actions.events.addHandler('BackButtonHelpPageSelected', 'click', gwd.auto_BackButtonHelpPageSelectedClick, false);
       gwd.actions.events.addHandler('BackButtonCreditPageSelected', 'click', gwd.auto_BackButtonCreditPageSelectedClick, false);
-      gwd.actions.events.addHandler('BackButtonCreditPageUnselected', 'mouseover', gwd.onMouseOverBackButton, false);
-      gwd.actions.events.addHandler('BackButtonCreditPageSelected', 'mouseover', gwd.onMouseOverBackButton, false);
-      gwd.actions.events.addHandler('BackButtonCreditPageUnselected', 'mouseout', gwd.onMouseOutBackButton, false);
-      gwd.actions.events.addHandler('BackButtonCreditPageSelected', 'mouseout', gwd.onMouseOutBackButton, false);
+      gwd.actions.events.addHandler('BackButtonCreditPageSelected', 'mouseover', gwd.onMouseOverBackButtonCreditPage, false);
+      gwd.actions.events.addHandler('BackButtonCreditPageUnselected', 'mouseover', gwd.onMouseOverBackButtonCreditPage, false);
+      gwd.actions.events.addHandler('BackButtonCreditPageSelected', 'mouseout', gwd.onMouseOutBackButtonCreditPage, false);
+      gwd.actions.events.addHandler('BackButtonCreditPageUnselected', 'mouseout', gwd.onMouseOutBackButtonCreditPage, false);
+      gwd.actions.events.addHandler('UnSelectedExitButton', 'touchenter', gwd.closeWindow, false);
+      gwd.actions.events.addHandler('UnSelectedCreditsButton', 'touchenter', gwd.auto_UnSelectedCreditsButtonTouchenter, false);
+      gwd.actions.events.addHandler('UnSelectedPlayButton', 'touchenter', gwd.auto_UnSelectedPlayButtonTouchenter, false);
+      gwd.actions.events.addHandler('BackButtonHelpPageUnselected', 'touchenter', gwd.auto_BackButtonHelpPageUnselectedTouchenter, false);
+      gwd.actions.events.addHandler('BackButtonCreditPageUnselected', 'touchenter', gwd.auto_BackButtonCreditPageUnselectedTouchenter, false);
+      gwd.actions.events.addHandler('SelectedPlayButton', 'click', gwd.enterFullScreenMode, false);
       gwd.actions.timeline.captureAnimationEnd(document.body);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
@@ -4521,7 +4572,6 @@
       gwd.actions.events.removeHandler('SelectedHelpButton', 'mouseout', gwd.onMouseOutHelpButton, false);
       gwd.actions.events.removeHandler('SelectedHelpButton', 'click', gwd.auto_SelectedHelpButtonClick, false);
       gwd.actions.events.removeHandler('SelectedCreditsButton', 'click', gwd.auto_SelectedCreditsButtonClick, false);
-      gwd.actions.events.removeHandler('help_to_home_button', 'click', gwd.auto_Help_to_home_buttonClick, false);
       gwd.actions.events.removeHandler('saci_perere_div', 'swap-saci-2-to-1', gwd.auto_Saci_perere_divSwap_saci_2_to_1, false);
       gwd.actions.events.removeHandler('saci_perere_div', 'saci-willy-willy-sound', gwd.saciWillyWillyRunning, false);
       gwd.actions.events.removeHandler('saci_perere_div', 'evaluateCollision300', gwd.evaluateCollision, false);
@@ -4589,16 +4639,26 @@
       gwd.actions.events.removeHandler('willy-willy-taparea', 'touchstart', gwd.auto_Willy_willy_tapareaAction, false);
       gwd.actions.events.removeHandler('jump-taparea', 'touchstart', gwd.auto_Jump_tapareaTouchstart, false);
       gwd.actions.events.removeHandler('UnSelectedHelpButton', 'touchstart', gwd.auto_UnSelectedHelpButtonTouchstart, false);
-      gwd.actions.events.removeHandler('BackButtonCreditPageUnselected', 'mouseover', gwd.onMouseOverBackButton, false);
-      gwd.actions.events.removeHandler('BackButtonCreditPageUnselected', 'mouseout', gwd.onMouseOutBackButton, false);
-      gwd.actions.events.removeHandler('BackButtonCreditPageSelected', 'mouseover', gwd.onMouseOverBackButton, false);
-      gwd.actions.events.removeHandler('BackButtonCreditPageSelected', 'mouseout', gwd.onMouseOutBackButton, false);
-      gwd.actions.events.removeHandler('BackButtonCreditPageSelected', 'click', gwd.auto_BackButtonSelected_1Click, false);
+      gwd.actions.events.removeHandler('BackButtonCreditPageUnselected', 'mouseenter', gwd.auto_BackButtonCreditPageUnselectedMouseenter, false);
+      gwd.actions.events.removeHandler('BackButtonUnselected', 'mouseenter', gwd.auto_BackButtonUnselectedMouseenter, false);
+      gwd.actions.events.removeHandler('SoundButtonUnselected', 'mouseenter', gwd.auto_SoundButtonUnselectedMouseenter, false);
+      gwd.actions.events.removeHandler('BackButtonHelpPageUnselected', 'mouseenter', gwd.auto_BackButtonCreditPageUnselected_1Mouseenter, false);
+      gwd.actions.events.removeHandler('BackButtonHelpPageSelected', 'mouseover', gwd.onMouseOverBackButtonHelpPage, false);
+      gwd.actions.events.removeHandler('BackButtonHelpPageSelected', 'mouseout', gwd.onMouseOutBackButtonHelpPage, false);
+      gwd.actions.events.removeHandler('BackButtonHelpPageUnselected', 'mouseover', gwd.onMouseOverBackButtonHelpPage, false);
+      gwd.actions.events.removeHandler('BackButtonHelpPageUnselected', 'mouseout', gwd.onMouseOutBackButtonHelpPage, false);
+      gwd.actions.events.removeHandler('BackButtonHelpPageSelected', 'click', gwd.auto_BackButtonHelpPageSelectedClick, false);
       gwd.actions.events.removeHandler('BackButtonCreditPageSelected', 'click', gwd.auto_BackButtonCreditPageSelectedClick, false);
-      gwd.actions.events.removeHandler('BackButtonCreditPageUnselected', 'mouseover', gwd.onMouseOverBackButton, false);
-      gwd.actions.events.removeHandler('BackButtonCreditPageSelected', 'mouseover', gwd.onMouseOverBackButton, false);
-      gwd.actions.events.removeHandler('BackButtonCreditPageUnselected', 'mouseout', gwd.onMouseOutBackButton, false);
-      gwd.actions.events.removeHandler('BackButtonCreditPageSelected', 'mouseout', gwd.onMouseOutBackButton, false);
+      gwd.actions.events.removeHandler('BackButtonCreditPageSelected', 'mouseover', gwd.onMouseOverBackButtonCreditPage, false);
+      gwd.actions.events.removeHandler('BackButtonCreditPageUnselected', 'mouseover', gwd.onMouseOverBackButtonCreditPage, false);
+      gwd.actions.events.removeHandler('BackButtonCreditPageSelected', 'mouseout', gwd.onMouseOutBackButtonCreditPage, false);
+      gwd.actions.events.removeHandler('BackButtonCreditPageUnselected', 'mouseout', gwd.onMouseOutBackButtonCreditPage, false);
+      gwd.actions.events.removeHandler('UnSelectedExitButton', 'touchenter', gwd.closeWindow, false);
+      gwd.actions.events.removeHandler('UnSelectedCreditsButton', 'touchenter', gwd.auto_UnSelectedCreditsButtonTouchenter, false);
+      gwd.actions.events.removeHandler('UnSelectedPlayButton', 'touchenter', gwd.auto_UnSelectedPlayButtonTouchenter, false);
+      gwd.actions.events.removeHandler('BackButtonHelpPageUnselected', 'touchenter', gwd.auto_BackButtonHelpPageUnselectedTouchenter, false);
+      gwd.actions.events.removeHandler('BackButtonCreditPageUnselected', 'touchenter', gwd.auto_BackButtonCreditPageUnselectedTouchenter, false);
+      gwd.actions.events.removeHandler('SelectedPlayButton', 'click', gwd.enterFullScreenMode, false);
       gwd.actions.timeline.releaseAnimationEnd(document.body);
     };
     document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
@@ -4607,6 +4667,9 @@
   <script data-source="gwdimage_min.js" data-version="15" data-exports-type="gwd-image" src="gwdimage_min.js"></script>
   <script data-source="gwdaudio_min.js" data-version="6" data-exports-type="gwd-audio" src="gwdaudio_min.js"></script>
   <script data-source="gwdtaparea_min.js" data-version="7" data-exports-type="gwd-taparea" src="gwdtaparea_min.js"></script>
+  <script data-source="gwdgesture_min.js" data-version="7" data-exports-type="gwd-gesture" src="gwdgesture_min.js"></script>
+  <script data-source="gwdgallerynavigation_min.js" data-version="6" data-exports-type="gwd-gallerynavigation" src="gwdgallerynavigation_min.js"></script>
+  <script data-source="gwdcarouselgallery_min.js" data-version="23" data-exports-type="gwd-carouselgallery" src="gwdcarouselgallery_min.js"></script>
 </head>
 
 <body class="document-body">
@@ -4614,7 +4677,7 @@
   <gwd-pagedeck class="gwd-page-container" id="pagedeck">
     <gwd-page id="home" class="gwd-page-wrapper home-content gwd-lightbox gwd-page-1tis" data-gwd-width="100%" data-gwd-height="100%" data-gwd-name="Home">
       <div class="gwd-page-content home-content gwd-div-1hld">
-        <div class="gwd-div-1kid" id="home_main_div">
+        <div class="gwd-div-1kid gwd-div-yxp2" id="home_main_div">
           <gwd-audio id="mouse_get_in_buttons" sources="assets/sounds/mouse_over_button.mp3" class="gwd-audio-nrwa" data-gwd-name="mouse_get_in_buttons"></gwd-audio>
           <gwd-image id="home_background" source="assets/BG-1920-1440.png" scaling="stretch" class="gwd-image-111r" data-gwd-name="home_background"></gwd-image>
           <gwd-image id="UnSelectedPlayButton" source="assets/UnSelectedPlayButton.png" scaling="stretch" class="gwd-image-ghs9" data-gwd-name="UnSelectedPlayButton" alt="Play"></gwd-image>
@@ -4636,7 +4699,7 @@
         <div class="gwd-div-1kid" id="credits_main_div">
           <gwd-image id="credits_background" source="assets/BG-1920-1440.png" scaling="stretch" class="gwd-image-111r" data-gwd-name="credits_background"></gwd-image>
           <div class="gwd-div-1g0b" id="credits_banner_div">
-            <gwd-image id="creditBanner" source="assets/banners/creditBanner.png" scaling="stretch" class="gwd-image-1b89"></gwd-image>
+            <gwd-image id="creditBanner" source="assets/banners/creditBanner.png" scaling="stretch" class="gwd-image-1hyk"></gwd-image>
           </div>
           <div class="gwd-div-1rdp gwd-div-uo6z" id="menu_bar_credtis_page">
             <gwd-image id="BackButtonCreditPageUnselected" source="assets/Buttons/BackButtonUnselected.png" scaling="stretch" class="gwd-image-1c60" data-gwd-name="BackButtonCreditPageUnselected"></gwd-image>
@@ -4648,10 +4711,12 @@
     <gwd-page id="Help" class="gwd-page-wrapper home-content gwd-lightbox gwd-page-1tis" data-gwd-width="100%" data-gwd-height="100%" data-gwd-name="Help">
       <div class="gwd-page-content home-content gwd-div-1hld">
         <div class="gwd-div-1kid" id="help_main_div">
-          <gwd-image id="help_background" source="assets/BG-1920-1440.png" scaling="stretch" class="gwd-image-111r" data-gwd-name="help_background"></gwd-image>
-          <span class="gwd-span-1kql">Help page:<br><br>Click/Touch somewhere on screen to run the command "Saci-perere willy-willy"<br><br><br>Run on iPhone 6/7/8 landscape screen.</span>
-          <div class="gwd-div-1rdp" id="menu_bar_help">
-            <p class="gwd-p-i5tr" id="help_to_home_button">Back</p>
+          <div class="gwd-div-1g0b gwd-div-8c2q" id="help_banner_div">
+            <gwd-carouselgallery id="carouselgallery_tutorial" scaling="stretch" pause-front-media="" resume-next-media="" class="gwd-carouselgallery-106b" data-gwd-name="carouselgallery_tutorial" images="assets/tutorial01_1.png,assets/tutorial02_1.png,assets/tutorial03_1.png" has-navigation="" start-frame="1" transition-duration="2000" navigation-highlight="rgba(115,62,31,1)"></gwd-carouselgallery>
+          </div>
+          <div class="gwd-div-1rdp gwd-div-uo6z" id="menu_bar_help_page">
+            <gwd-image id="BackButtonHelpPageUnselected" source="assets/Buttons/BackButtonUnselected.png" scaling="stretch" class="gwd-image-1c60" data-gwd-name="BackButtonHelpPageUnselected"></gwd-image>
+            <gwd-image id="BackButtonHelpPageSelected" source="assets/Buttons/BackButtonSelected.png" scaling="stretch" class="gwd-image-1j5l" data-gwd-name="BackButtonHelpPageSelected"></gwd-image>
           </div>
         </div>
       </div>

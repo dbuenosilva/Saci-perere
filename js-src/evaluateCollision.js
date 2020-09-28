@@ -33,17 +33,13 @@ if (meetFarmer || meetOnca || meetSucuri ) {
       gwd.globalVars.score++;
       addScoreToBar(gwd.globalVars.score);
     }
-    else if (meetFarmer && ( gwd.globalVars.saciWillyWilly ) ) {
-      gwd.actions.timeline.gotoAndPlay("farmer-div", "farmer_falling_start");
+    else if (meetFarmer && ( gwd.globalVars.saciWillyWilly ) ) {      
       gwd.globalVars.score += 10;
       addScoreToBar(gwd.globalVars.score);
+      gwd.actions.timeline.gotoAndPlay("farmer-div", "farmer_falling_start");      
     }
     else {
       gwd.actions.timeline.gotoAndPlay("saci_perere_div", "collision-start");
-  }
-
-  if (document.getElementById("gained_score").style.width >= 68) {
-    alert("Congratulations! You win the game. Keep saving the Amazon!");  
   }
 
 }
@@ -97,6 +93,8 @@ function addScoreToBar(scoreGained) {
   }
   else {
     document.getElementById("gained_score").style.width =  "68%";
+    alert("Congratulations! You win the game. Keep saving the Amazon!");  
+
   }
   document.getElementById("score").textContent = gwd.globalVars.score;
 }
