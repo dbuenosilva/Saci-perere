@@ -36,7 +36,7 @@ if (meetFarmer || meetOnca || meetSucuri ) {
     else if (meetFarmer && ( gwd.globalVars.saciWillyWilly ) ) {      
       gwd.globalVars.score += 10;
       addScoreToBar(gwd.globalVars.score);
-      gwd.actions.timeline.gotoAndPlay("farmer-div", "farmer_falling_start");      
+gwd.actions.timeline.gotoAndPlay("farmer-div", "farmer_falling_start");      
     }
     else {
       gwd.actions.timeline.gotoAndPlay("saci_perere_div", "collision-start");
@@ -103,3 +103,33 @@ function addScoreToBar(scoreGained) {
 function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
+
+
+var element =  document.getElementById('home_main_div');
+if (typeof(element) != 'undefined' && element != null)
+{
+  document.getElementById("home_main_div").style.maxWidth = "1280px";
+  document.getElementById("home_main_div").style.maxHeight = "800px";
+}
+
+element =  document.getElementById('game_main_div');
+if (typeof(element) != 'undefined' && element != null)
+{
+  document.getElementById("game_main_div").style.maxWidth = "1280px";
+  document.getElementById("game_main_div").style.maxHeight = "800px";  
+}
+
+element =  document.getElementById('credits_main_div');
+if (typeof(element) != 'undefined' && element != null)
+{
+  document.getElementById("credits_main_div").style.maxWidth = "1280px";
+  document.getElementById("credits_main_div").style.maxHeight = "800px";  
+}
+
+element =  document.getElementById('help_main_div');
+if (typeof(element) != 'undefined' && element != null)
+{
+  document.getElementById("help_main_div").style.maxWidth = "1280px";
+  document.getElementById("help_main_div").style.maxHeight = "800px";  
+}
+

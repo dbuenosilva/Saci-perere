@@ -8,4 +8,3 @@ if (elem.requestFullscreen) {
 } else if (elem.msRequestFullscreen) { /* IE/Edge */
   elem.msRequestFullscreen();
 }
-}
