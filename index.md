@@ -1,37 +1,19 @@
-## Welcome to GitHub Pages
+## Saving the Amazon with Saci-pererê game
 
-You can use the [editor on GitHub](https://github.com/dbuenosilva/Saci-perere/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+The challenge of the game is saving the Amazon with Saci-pererê going through the rainforest teasing and annoying its destroyers. To be successful and win the game, you have to arrive with at least seventy points at the Meeting of the Waters, where Negro River meets the Solimões River.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+After years and years of aboriginals and environmentalist fighting against destroying the Amazon, it is said that Saci-pererê is the unique guy who can put the destroyers away from Amazon. Well-known destroyers of Amazon rainforest are miner companies, wood-sellers, cattle farmers and drug dealers. Saci-pererê bothers the destroyers using his powerful abilities to provoking a dust devil, the "Saci-pererê willy-willy" superpower. If rainforest destroyers come up, you must use "Saci-pererê willy-willy" to tease and to annoy they. For each destroyer annoyed, you get ten extra points.
 
-### Markdown
+However, walking around the Amazon rainforest is a bit dangerous. You have to jump threatening animals. So, you must jump to avoid being eaten by a "Sucuri" snake, "Onça-pintada" jaguar, alligator and fish ( Yep, Amazon Piranhas are small fish, but they can eat you quicker than a shark!). To each animal that you jump you get one point. Be kind with macaws. Amazon birds do not threaten you.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Thus, it is possible to save the Amazon! Just jumping dangerous animals and teasing the destroyers. 
 
-```markdown
-Syntax highlighted code block
+Bet your friends to save the Amazon and check your score in the ranking.
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+## Key features
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/dbuenosilva/Saci-perere/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- Easy to play and score ranked to bet your friends;
+- Web responsive layout compatible to any computer, tablet or mobile phone on landscape screen orientation and connected to the Internet;
+- Warning people, mainly kids, about the importance of the Amazon rainforest;
+- Reviving folklore under games trend and to present the Amazon fauna and Amazon river effluent.
